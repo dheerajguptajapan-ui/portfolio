@@ -100,3 +100,47 @@ function updateMascotBubble(zoneId) {
         }
     }, 150); // Wait for fade out
 }
+
+// Accordion Toggle
+function toggleAccordion(element) {
+    // If we only want one open at a time, we could close others here
+    // document.querySelectorAll('.timeline-item').forEach(item => {
+    //     if(item !== element) item.classList.remove('expanded');
+    // });
+    element.classList.toggle('expanded');
+}
+
+// Sakura Petal Generator
+function createPetal() {
+    const container = document.getElementById('sakura-container');
+    if(!container) return;
+    
+    // Only generate petals if the document is visible to save CPU
+    if(document.hidden) return;
+
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+    
+    // Randomize properties
+    const size = Math.random() * 10 + 5; // 5px to 15px
+    petal.style.width = `${size}px`;
+    petal.style.height = `${size}px`;
+    petal.style.left = `${Math.random() * 100}vw`; // Random horizontal start position
+    
+    const fallDuration = Math.random() * 5 + 5; // 5s to 10s fall
+    const swayDuration = Math.random() * 2 + 2; // 2s to 4s sway
+    petal.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
+    petal.style.opacity = Math.random() * 0.5 + 0.3; // 0.3 to 0.8
+    
+    container.appendChild(petal);
+    
+    // Remove after falling
+    setTimeout(() => {
+        if (petal.parentNode === container) {
+            petal.remove();
+        }
+    }, fallDuration * 1000);
+}
+
+// Create a new petal every 400ms
+setInterval(createPetal, 400);

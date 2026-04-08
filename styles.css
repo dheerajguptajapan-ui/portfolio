@@ -259,6 +259,49 @@ body.night-theme .mascot-img {
     animation: fadeInUp 1s ease 0.4s both;
 }
 
+.resume-downloads {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+.btn-download {
+    background: var(--glass-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    border: 2px solid var(--accent-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-download:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--accent-glow);
+}
+
+/* About / Self PR Zone */
+.about-panel {
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.about-panel p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+.about-panel p:last-child {
+    margin-bottom: 0;
+}
+
 /* Experience Zone (Marunouchi) */
 .timeline {
     width: 100%;
@@ -278,6 +321,7 @@ body.night-theme .mascot-img {
     box-shadow: 0 0 10px var(--accent-glow);
 }
 
+/* Accordion Experience Details */
 .timeline-item {
     position: relative;
     padding-left: 60px;
@@ -285,6 +329,42 @@ body.night-theme .mascot-img {
     opacity: 0;
     transform: translateX(-50px);
     transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.timeline-item:hover {
+    box-shadow: 0 15px 40px var(--accent-glow);
+    border-color: var(--accent-color);
+}
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chevron {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item.expanded .chevron {
+    transform: rotate(180deg);
+}
+
+.timeline-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease, margin-top 0.3s ease;
+    margin-top: 0;
+}
+
+.timeline-item.expanded .timeline-details {
+    max-height: 1000px; /* large enough to fit content */
+    opacity: 1;
+    margin-top: 15px;
 }
 
 .timeline-item.visible {
@@ -322,7 +402,7 @@ body.night-theme .mascot-img {
 .timeline-content .company {
     font-size: 1rem;
     opacity: 0.8;
-    margin-bottom: 15px;
+    margin-bottom: 0px; /* modified for accordion */
     font-weight: 600;
 }
 
@@ -543,6 +623,40 @@ body.night-theme .tech-badge {
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sakura Petals Animation */
+#sakura-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    top: -10%;
+    background: #ffb7c5; /* delicate pink */
+    border-radius: 15px 0px 15px 0px;
+    opacity: 0.8;
+    animation: fall linear forwards, sway ease-in-out alternate infinite;
+    box-shadow: 0 0 5px rgba(255, 183, 197, 0.5);
+}
+
+body.night-theme .petal {
+    background: #ff00ff; /* cyberpunk neon pink */
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+@keyframes fall {
+    to { top: 110%; transform: rotate(360deg); }
+}
+
+@keyframes sway {
+    from { margin-left: -50px; }
+    to { margin-left: 50px; }
 }
 
 /* Responsive */

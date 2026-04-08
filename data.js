@@ -1,6 +1,7 @@
 const translations = {
     en: {
         "mascot-hero": "Welcome to my Tokyo Theme Park! Enjoy the tour!",
+        "mascot-about": "Learn more about my journey from India to SAP consulting in Tokyo!",
         "mascot-experience": "This is the business district. Look at my SAP projects!",
         "mascot-skills": "Welcome to the Tech Arcade! Watch my skill bars power up!",
         "mascot-deeptech": "The Odaiba Engineering Bay! Core SAP architecture lies here.",
@@ -11,7 +12,17 @@ const translations = {
         "hero-name": "Dheeraj Gupta",
         "hero-title": "SAP SD Bilingual Consultant",
         "hero-subtitle": "Based in Tokyo | Expert in OTC, Data Migration & Support",
+        "btn-english": "📄 English CV",
+        "btn-rirekisho": "📝 履歴書 (Rirekisho)",
+        "btn-shokumu": "💼 職務経歴書 (Details)",
         
+        "section-about": "Self PR / My Journey",
+        "about-p1": "My career started in procurement in the Indian manufacturing industry, where I spearheaded the implementation of Zoho Inventory, improving inventory turnover by 20% and reducing storage costs by 15%. This experience sparked my passion for using IT to drive business transformation, motivating me to pivot toward larger ERP systems.",
+        "about-p2": "Simultaneously, I dedicated myself to mastering the Japanese language. I earned two diplomas from Delhi University's Department of East Asian Studies and passed the JLPT N2. My goal wasn't just acquiring language certifications, but deeply understanding Japanese business culture to become a valuable asset within Japanese organizations.",
+        "about-p3": "At Fujitsu India, I directly supported Japanese clients. Initially challenged by technical jargon and Keigo, I overcame this by recording meetings for review and thoroughly memorizing manuals. I also successfully automated procurement workflows using UiPath RPA, cementing my belief in combining language capabilities with IT.",
+        "about-p4": "Upon joining Capgemini, I immersed myself in SAP SD, self-studying foundational concepts like ATP, Pricing, and Shipping Points daily. Within six months, I was independently handling core SD configurations, and within a year, my accelerated resolution speed earned high client praise. Gaining hands-on experience across the entire SAP implementation lifecycle—Rollouts, Data Migrations, UAT, and Support—on major projects like Yamaha Music, Panasonic, and GC Dental remains my greatest professional asset.",
+        "about-p5": "In March 2026, I relocated to Tokyo and joined IndoSakura Software Japan. Transitioning from remote support to an on-site environment has given me the opportunity to engage directly with local clients. As I continue to grow, I am actively learning SAP MM and SAP BTP to evolve into a multi-dimensional consultant capable of proposing comprehensive, cross-module solutions. My greatest strengths are my 'speed of learning' and 'bilingual team contribution'. I am driven by the desire to earn my team's trust and consistently deliver results.",
+
         "section-experience": "Experience Timeline",
         "exp-indosakura-date": "Mar 2026 - Present",
         "exp-indosakura-title": "SAP SD Bilingual Consultant",
@@ -78,6 +89,7 @@ const translations = {
     },
     ja: {
         "mascot-hero": "私の東京テーマパークへようこそ！ごゆっくりお楽しみください！",
+        "mascot-about": "インドから東京に至る私のキャリアの軌跡をご覧ください！",
         "mascot-experience": "ここはビジネス街です。私のSAP経歴をご覧ください！",
         "mascot-skills": "テックアーケードへようこそ！スキルゲージがチャージされます！",
         "mascot-deeptech": "お台場エンジニアリングベイ！SAPのコアアーキテクチャを展開しています。",
@@ -88,6 +100,16 @@ const translations = {
         "hero-name": "グプタ・ディラジュです",
         "hero-title": "SAP SD バイリンガルコンサルタント",
         "hero-subtitle": "東京在住 | OTC、データ移行、運用サポートの専門家",
+        "btn-english": "📄 英語レジュメ (CV)",
+        "btn-rirekisho": "📝 履歴書 (Rirekisho)",
+        "btn-shokumu": "💼 職務経歴書 (Details)",
+
+        "section-about": "自己PR",
+        "about-p1": "私のキャリアは、インドの製造業での購買担当からスタートしました。仕入先との価格交渉や在庫管理に従事するなかで、Zoho Inventoryの導入プロジェクトを自ら主導し、在庫回転率20%改善・保管コスト15%削減を達成しました。この経験を通じて「ITの力で業務を変える」という面白さを実感し、より大きなシステムに携わりたいという思いが強まっていきました。",
+        "about-p2": "同時に、日本語を独学で本格的に学び始めました。デリー大学の東アジア研究学科でディプロマを2段階取得し、さらに日本語能力試験N2の取得に向けて毎日学習を継続しました。単に語学資格を目指すというよりも、日本のビジネス文化や仕事の進め方を深く理解し、日本企業の中で本当に役立てる人材になりたいという一心でした。",
+        "about-p3": "富士通インドでは、日本のクライアントに対して日本語で直接対応する業務を担当しました。最初は専門用語や敬語表現に苦労しましたが、会議を録音して振り返り、業務マニュアルを繰り返し読み込むことで徐々に自信をつけていきました。また、UiPathを活用した調達業務の自動化にも取り組み、ITと語学を組み合わせた業務改善の手応えを感じることができました。",
+        "about-p4": "キャップジェミニに入社した当初は、SAP SDの専門知識が十分ではありませんでした。しかし、ATPの設定・価格決定・出荷ポイントなど基礎から毎日自己学習を積み重ね、ベテランコンサルタントの作業を観察しながらベストプラクティスを吸収していきました。その結果、入社から半年でSD基本設定を単独担当できるレベルまで成長。1年後にはクライアントからの問い合わせに対する解決スピードが大幅に向上し、「対応が速くなった」「説明がわかりやすい」と言っていただけるようになりました。Yamaha Music・Panasonic・GC Dentalなど複数のプロジェクトを経験することで、ロールアウト・データ移行・UAT・サポートといったSAP導入の全フェーズを体験できたことは、私の最大の財産です。",
+        "about-p5": "2026年3月、東京に拠点を移し、インドサクラ ジャパンに入社しました。インドでのリモート対応から、日本国内での常駐対応へと環境が変わり、より直接的に日本のクライアントと向き合う機会をいただいています。現地での実務経験を積みながら、SAP MMおよびSAP BTPの習得にも取り組んでいます。SDだけでなく、MM・BTPを横断した複合的な提案ができるコンサルタントを目指しています。私の強みは「学ぶ速さ」と「日本語と英語を使ったチームへの貢献」です。どのような環境でも、まず自分から動き、周囲と連携しながら課題を解決することを大切にしています。チームの一員として信頼されること、そしてクライアントに「この人に頼んでよかった」と思っていただけることが、私の仕事の原動力です。",
 
         "section-experience": "職務経歴",
         "exp-indosakura-date": "2026年3月 - 現在",

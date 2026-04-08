@@ -11,6 +11,9 @@
 </head>
 <body class="day-theme"> <!-- Default to day anime theme -->
     
+    <!-- Sakura Particle Overlay -->
+    <div id="sakura-container"></div>
+
     <!-- Controls -->
     <div class="controls-container">
         <div class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle Day/Night Tokyo">
@@ -39,75 +42,117 @@
                 <h1 class="name" data-i18n="hero-name">Dheeraj Gupta</h1>
                 <h2 class="title" data-i18n="hero-title">SAP SD Bilingual Consultant</h2>
                 <p class="subtitle" data-i18n="hero-subtitle">Based in Tokyo | Expert in OTC, Data Migration & Support</p>
+                <div class="resume-downloads">
+                    <a href="assets/Dheeraj_Gupta_SAP_SD_Resume_2026.docx" download class="btn-download" data-i18n="btn-english">📄 English CV</a>
+                    <a href="assets/履歴書_Dheeraj_Gupta_2026.xlsx" download class="btn-download" data-i18n="btn-rirekisho">📝 履歴書 (Rirekisho)</a>
+                    <a href="assets/職務経歴書_Dheeraj_Gupta_2026.docx" download class="btn-download" data-i18n="btn-shokumu">💼 職務経歴書 (CV)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Self PR Zone -->
+        <section id="about" class="zone about-zone" data-zone="about">
+            <h3 class="section-title" data-i18n="section-about">Self PR / My Journey</h3>
+            <div class="glass-panel about-panel animate-on-scroll">
+                <p data-i18n="about-p1"></p>
+                <p data-i18n="about-p2"></p>
+                <p data-i18n="about-p3"></p>
+                <p data-i18n="about-p4"></p>
+                <p data-i18n="about-p5"></p>
             </div>
         </section>
 
         <!-- Experience: Marunouchi Zone -->
         <section id="experience" class="zone marunouchi-zone" data-zone="experience">
             <h3 class="section-title" data-i18n="section-experience">Experience Timeline</h3>
+            <p style="text-align:center; font-size: 0.9rem; margin-bottom: 20px; opacity: 0.8; font-style: italic;">Tap on a project to expand and see my achievements!</p>
             <div class="timeline">
                 
-                <div class="timeline-item glass-panel animate-on-scroll">
+                <div class="timeline-item glass-panel animate-on-scroll" onclick="toggleAccordion(this)">
                     <div class="timeline-date" data-i18n="exp-indosakura-date">Mar 2026 - Present</div>
                     <div class="timeline-content">
-                        <h4 data-i18n="exp-indosakura-title">SAP SD Bilingual Consultant</h4>
+                        <div class="title-row">
+                            <h4 data-i18n="exp-indosakura-title">SAP SD Bilingual Consultant</h4>
+                            <span class="chevron">▼</span>
+                        </div>
                         <div class="company" data-i18n="exp-indosakura-company">IndoSakura Software Japan | Tokyo</div>
-                        <ul id="exp-indosakura-bullets">
-                            <li data-i18n="exp-indosakura-b1">Providing L2/L3 support covering core OTC processes and Pricing Procedures.</li>
-                            <li data-i18n="exp-indosakura-b2">Gathering bilingual requirements to map business needs into System Architecture.</li>
-                            <li data-i18n="exp-indosakura-b3">Resolving advanced output determination and shipping point issues.</li>
-                        </ul>
-                        <div class="tech-labels">
-                            <span class="tech-badge">OTC Flow</span>
-                            <span class="tech-badge">Pricing Procedures</span>
-                            <span class="tech-badge">Output Determination</span>
+                        
+                        <div class="timeline-details">
+                            <ul id="exp-indosakura-bullets">
+                                <li data-i18n="exp-indosakura-b1">Providing L2/L3 support covering core OTC processes and Pricing Procedures.</li>
+                                <li data-i18n="exp-indosakura-b2">Gathering bilingual requirements to map business needs into System Architecture.</li>
+                                <li data-i18n="exp-indosakura-b3">Resolving advanced output determination and shipping point issues.</li>
+                            </ul>
+                            <div class="tech-labels">
+                                <span class="tech-badge">OTC Flow</span>
+                                <span class="tech-badge">Pricing Procedures</span>
+                                <span class="tech-badge">Output Determination</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item glass-panel animate-on-scroll">
+                <div class="timeline-item glass-panel animate-on-scroll" onclick="toggleAccordion(this)">
                     <div class="timeline-date" data-i18n="exp-capgemini-date">Jul 2023 - Feb 2026</div>
                     <div class="timeline-content">
-                        <h4 data-i18n="exp-capgemini-title">SAP SD Bilingual Consultant</h4>
+                        <div class="title-row">
+                            <h4 data-i18n="exp-capgemini-title">SAP SD Bilingual Consultant</h4>
+                            <span class="chevron">▼</span>
+                        </div>
                         <div class="company" data-i18n="exp-capgemini-company">Capgemini India (Japan Market)</div>
-                        <ul id="exp-capgemini-bullets">
-                            <li data-i18n="exp-capgemini-b1">Tapestry: Handled production support, analyzing IDOC failures and designing User Exits.</li>
-                            <li data-i18n="exp-capgemini-b2">Yamaha Music: Mapped Enterprise Structure and customized Copy Control for Global Templates.</li>
-                            <li data-i18n="exp-capgemini-b3">Panasonic: Executed complex Legacy-to-S/4HANA Data Migrations and implemented BAPIs.</li>
-                            <li data-i18n="exp-capgemini-b4">GC Dental: Led Panaya UAT test cycles covering end-to-end OTC and custom RICEFW enhancements.</li>
-                        </ul>
-                        <div class="tech-labels">
-                            <span class="tech-badge">RICEFW Framework</span>
-                            <span class="tech-badge">BAPI & BADI</span>
-                            <span class="tech-badge">User Exits</span>
-                            <span class="tech-badge">Data Migration</span>
-                            <span class="tech-badge">Enterprise Structure</span>
-                            <span class="tech-badge">Copy Control</span>
+                        
+                        <div class="timeline-details">
+                            <ul id="exp-capgemini-bullets">
+                                <li data-i18n="exp-capgemini-b1">Tapestry: Handled production support, analyzing IDOC failures and designing User Exits.</li>
+                                <li data-i18n="exp-capgemini-b2">Yamaha Music: Mapped Enterprise Structure and customized Copy Control for Global Templates.</li>
+                                <li data-i18n="exp-capgemini-b3">Panasonic: Executed complex Legacy-to-S/4HANA Data Migrations and implemented BAPIs.</li>
+                                <li data-i18n="exp-capgemini-b4">GC Dental: Led Panaya UAT test cycles covering end-to-end OTC and custom RICEFW enhancements.</li>
+                            </ul>
+                            <div class="tech-labels">
+                                <span class="tech-badge">RICEFW Framework</span>
+                                <span class="tech-badge">BAPI & BADI</span>
+                                <span class="tech-badge">User Exits</span>
+                                <span class="tech-badge">Data Migration</span>
+                                <span class="tech-badge">Enterprise Structure</span>
+                                <span class="tech-badge">Copy Control</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item glass-panel animate-on-scroll">
+                <div class="timeline-item glass-panel animate-on-scroll" onclick="toggleAccordion(this)">
                     <div class="timeline-date" data-i18n="exp-fujitsu-date">Jan 2022 - Jul 2023</div>
                     <div class="timeline-content">
-                        <h4 data-i18n="exp-fujitsu-title">Technical Service Representative</h4>
+                        <div class="title-row">
+                            <h4 data-i18n="exp-fujitsu-title">Technical Service Representative</h4>
+                            <span class="chevron">▼</span>
+                        </div>
                         <div class="company" data-i18n="exp-fujitsu-company">Fujitsu India (Japan Market)</div>
-                        <ul>
-                            <li data-i18n="exp-fujitsu-b1">Supported bilingual procurement processing for global partners.</li>
-                            <li data-i18n="exp-fujitsu-b2">Automated PO and Quote processes using UiPath RPA, significantly reducing manual errors.</li>
-                        </ul>
+                        
+                        <div class="timeline-details">
+                            <ul>
+                                <li data-i18n="exp-fujitsu-b1">Supported bilingual procurement processing for global partners.</li>
+                                <li data-i18n="exp-fujitsu-b2">Automated PO and Quote processes using UiPath RPA, significantly reducing manual errors.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="timeline-item glass-panel animate-on-scroll">
+                <div class="timeline-item glass-panel animate-on-scroll" onclick="toggleAccordion(this)">
                     <div class="timeline-date" data-i18n="exp-gupta-date">Aug 2017 - Apr 2019</div>
                     <div class="timeline-content">
-                        <h4 data-i18n="exp-gupta-title">Procurement Executive</h4>
+                        <div class="title-row">
+                            <h4 data-i18n="exp-gupta-title">Procurement Executive</h4>
+                            <span class="chevron">▼</span>
+                        </div>
                         <div class="company" data-i18n="exp-gupta-company">Gupta Industrial Hardware | India</div>
-                        <ul>
-                            <li data-i18n="exp-gupta-b1">Led the implementation of Zoho Inventory from scratch.</li>
-                            <li data-i18n="exp-gupta-b2">Improved inventory turnover by 20% and slashed storage costs by 15%.</li>
-                        </ul>
+                        
+                        <div class="timeline-details">
+                            <ul>
+                                <li data-i18n="exp-gupta-b1">Led the implementation of Zoho Inventory from scratch.</li>
+                                <li data-i18n="exp-gupta-b2">Improved inventory turnover by 20% and slashed storage costs by 15%.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
