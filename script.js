@@ -122,19 +122,22 @@ function createPetal() {
     petal.classList.add('petal');
     
     // Randomize properties
-    const size = Math.random() * 10 + 5; // 5px to 15px
+    const size = Math.random() * 15 + 12; // 12px to 27px (Bigger petals)
     petal.style.width = `${size}px`;
     petal.style.height = `${size}px`;
     petal.style.left = `${Math.random() * 100}vw`; // Random horizontal start position
     
-    const fallDuration = Math.random() * 5 + 5; // 5s to 10s fall
+    // Performance max cap: fallback if tab goes out of focus heavily
+    if (container.childElementCount > 80) return;
+
+    const fallDuration = Math.random() * 4 + 4; // 4s to 8s fall (slightly faster fall because they are bigger)
     const swayDuration = Math.random() * 2 + 2; // 2s to 4s sway
     petal.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
-    petal.style.opacity = Math.random() * 0.5 + 0.3; // 0.3 to 0.8
+    petal.style.opacity = Math.random() * 0.4 + 0.4; // 0.4 to 0.8
     
     container.appendChild(petal);
     
-    // Remove after falling
+    // Remove after falling to free memory
     setTimeout(() => {
         if (petal.parentNode === container) {
             petal.remove();
@@ -142,5 +145,5 @@ function createPetal() {
     }, fallDuration * 1000);
 }
 
-// Create a new petal every 400ms
-setInterval(createPetal, 400);
+// Create a new petal more frequently (every 150ms)
+setInterval(createPetal, 150);
