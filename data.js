@@ -85,7 +85,9 @@ const translations = {
         "section-contact": "Get in Touch",
         "contact-desc": "Ready to optimize your SAP processes in Japan? Let's connect!",
         "contact-location": "Tokyo, Japan",
-        "contact-linkedin": "LinkedIn Profile"
+        "contact-linkedin": "LinkedIn Profile",
+        "contact-calendar-desc": "Want to discuss an opportunity? Book a 30-minute chat with me!",
+        "btn-calendar": "🗓️ Book an Appointment"
     },
     ja: {
         "mascot-hero": "私の東京テーマパークへようこそ！ごゆっくりお楽しみください！",
@@ -173,6 +175,8 @@ const translations = {
         "section-contact": "お問い合わせ",
         "contact-desc": "日本でのSAPプロセス最適化にご興味はありますか？ぜひご連絡ください！",
         "contact-location": "日本、東京",
-        "contact-linkedin": "LinkedIn プロフィール"
+        "contact-linkedin": "LinkedIn プロフィール",
+        "contact-calendar-desc": "プロジェクトのご相談はありませんか？30分のカジュアル面談を予約する：",
+        "btn-calendar": "🗓️ 面談を予約する"
     }
 };

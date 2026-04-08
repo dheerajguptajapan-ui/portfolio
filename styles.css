@@ -287,6 +287,31 @@ body.night-theme .mascot-img {
     box-shadow: 0 10px 20px var(--accent-glow);
 }
 
+/* Calendar Booking Feature */
+.calendar-booking {
+    text-align: center;
+    margin: 30px auto 40px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px dashed var(--accent-color);
+}
+.calendar-booking p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.btn-calendar {
+    display: inline-block;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    background: var(--ambient-glow);
+    color: var(--text-color);
+}
+body.night-theme .btn-calendar {
+    background: rgba(0, 229, 255, 0.15);
+}
+
 /* About / Self PR Zone */
 .about-panel {
     text-align: left;
