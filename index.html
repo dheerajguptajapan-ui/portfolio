@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dheeraj Gupta - SAP SD Consultant</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="data.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- Background Decoration -->
+    <div class="bg-blur shape1"></div>
+    <div class="bg-blur shape2"></div>
+    <div class="bg-blur shape3"></div>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">DG.</div>
+        <div class="nav-links">
+            <a href="#about" data-i18n="nav-about">About</a>
+            <a href="#experience" data-i18n="nav-experience">Experience</a>
+            <a href="#skills" data-i18n="nav-skills">Skills</a>
+            <a href="#contact" data-i18n="nav-contact">Contact</a>
+        </div>
+        <div class="lang-toggle">
+            <span id="lang-en" class="lang-option active" onclick="setLanguage('en')">EN</span>
+            <span class="lang-sep">/</span>
+            <span id="lang-ja" class="lang-option" onclick="setLanguage('ja')">JA</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="hero" class="glass-panel">
+            <div class="hero-content">
+                <span class="greeting" data-i18n="hero-greeting">Hi, I'm</span>
+                <h1 class="name" data-i18n="hero-name">Dheeraj Gupta</h1>
+                <h2 class="title" data-i18n="hero-title">SAP SD Bilingual Consultant</h2>
+                <p class="subtitle" data-i18n="hero-subtitle">Japan Market Specialist based in Tokyo</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn primary" data-i18n="btn-contact">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-placeholder">
+                    <span>DG</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h3 class="section-title" data-i18n="section-about">About Me</h3>
+            <div class="glass-panel about-card">
+                <p data-i18n="about-text-1"></p>
+                <p data-i18n="about-text-2"></p>
+                <p data-i18n="about-text-3"></p>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h3 class="section-title" data-i18n="section-experience">Experience</h3>
+            <div class="timeline">
+                
+                <div class="timeline-item glass-panel">
+                    <div class="timeline-date" data-i18n="exp-indosakura-date">Mar 2026 - Present</div>
+                    <div class="timeline-content">
+                        <h4 data-i18n="exp-indosakura-title">Bilingual SAP SD Consultant</h4>
+                        <div class="company" data-i18n="exp-indosakura-company">IndoSakura Software Japan | Tokyo</div>
+                        <p data-i18n="exp-indosakura-desc"></p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-panel">
+                    <div class="timeline-date" data-i18n="exp-capgemini-date">Jul 2023 - Feb 2026</div>
+                    <div class="timeline-content">
+                        <h4 data-i18n="exp-capgemini-title">SAP SD Bilingual Consultant</h4>
+                        <div class="company" data-i18n="exp-capgemini-company">Capgemini India Pvt. Ltd. | Remote</div>
+                        <p data-i18n="exp-capgemini-desc"></p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-panel">
+                    <div class="timeline-date" data-i18n="exp-fujitsu-date">Jan 2022 - Jul 2023</div>
+                    <div class="timeline-content">
+                        <h4 data-i18n="exp-fujitsu-title">Technical Service Representative</h4>
+                        <div class="company" data-i18n="exp-fujitsu-company">Fujitsu India Pvt. Ltd. | Remote</div>
+                        <p data-i18n="exp-fujitsu-desc"></p>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-panel">
+                    <div class="timeline-date" data-i18n="exp-gupta-date">Aug 2017 - Apr 2019</div>
+                    <div class="timeline-content">
+                        <h4 data-i18n="exp-gupta-title">Procurement Executive</h4>
+                        <div class="company" data-i18n="exp-gupta-company">Gupta Industrial Hardware | India</div>
+                        <p data-i18n="exp-gupta-desc"></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h3 class="section-title" data-i18n="section-skills">Skills & Expertise</h3>
+            <div class="skills-grid">
+                
+                <div class="skill-card glass-panel">
+                    <h4 data-i18n="skill-cat-sap">Core SAP</h4>
+                    <ul>
+                        <li data-i18n="skill-sap-1">SAP S/4HANA Sales (SD)</li>
+                        <li data-i18n="skill-sap-2">SAP MM (Basics)</li>
+                        <li data-i18n="skill-sap-3">SAP BTP (Learning)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card glass-panel">
+                    <h4 data-i18n="skill-cat-tech">Technical</h4>
+                    <ul>
+                        <li data-i18n="skill-tech-1">IDOC & EDI</li>
+                        <li data-i18n="skill-tech-2">API Integration</li>
+                        <li data-i18n="skill-tech-3">UiPath RPA</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card glass-panel">
+                    <h4 data-i18n="skill-cat-other">Tools</h4>
+                    <ul>
+                        <li data-i18n="skill-other-1">Panaya UAT</li>
+                        <li data-i18n="skill-other-2">BPD, FDD, TDD</li>
+                        <li data-i18n="skill-other-3">DevOps & Agile</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="glass-panel">
+            <h3 class="section-title" data-i18n="section-contact">Get in Touch</h3>
+            <p class="contact-desc" data-i18n="contact-desc">I am currently based in Tokyo and always open to discussing new opportunities.</p>
+            
+            <div class="contact-info">
+                <div class="info-item">
+                    <span>&#9993;</span> <!-- Email Icon -->
+                    <a href="mailto:Dheerajguptajapan@gmail.com" data-i18n="contact-email">Dheerajguptajapan@gmail.com</a>
+                </div>
+                <div class="info-item">
+                    <span>&#9742;</span> <!-- Phone Icon -->
+                    <span data-i18n="contact-phone">+81 070-9062-7702</span>
+                </div>
+                <div class="info-item">
+                    <span>&#128205;</span> <!-- Location Icon -->
+                    <span data-i18n="contact-location">Tokyo, Japan</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dheeraj Gupta. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
