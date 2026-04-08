@@ -1,65 +1,102 @@
-// Default language
+// Language Switching Logic
 let currentLang = 'en';
 
-// Function to update the DOM elements with translation mapping
-function applyTranslations(lang) {
-    if (!translations[lang]) return;
-
-    const dataDict = translations[lang];
-
-    // Find all elements with a data-i18n attribute
-    const elements = document.querySelectorAll('[data-i18n]');
+function setLanguage(lang) {
+    currentLang = lang;
     
-    elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dataDict[key]) {
-            el.textContent = dataDict[key];
+    // Update active styles
+    document.querySelectorAll('.lang-option').forEach(el => el.classList.remove('active'));
+    document.getElementById(`lang-${lang}`).classList.add('active');
+    
+    // Update text content
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
         }
     });
 
-    // Update body class for specific font styling if needed
-    if(lang === 'ja') {
-        document.body.style.fontFamily = "'Noto Sans JP', sans-serif";
+    // Update current mascot bubble if changing language while viewing a zone
+    updateMascotBubble(currentZone);
+}
+
+// Theme Toggling Logic (Day/Night Cyberpunk)
+function toggleTheme() {
+    const body = document.body;
+    const btnDay = document.getElementById('icon-day');
+    const btnNight = document.getElementById('icon-night');
+
+    if (body.classList.contains('day-theme')) {
+        body.classList.replace('day-theme', 'night-theme');
+        btnNight.style.display = 'none';
+        btnDay.style.display = 'inline';
     } else {
-        document.body.style.fontFamily = "'Inter', sans-serif";
+        body.classList.replace('night-theme', 'day-theme');
+        btnDay.style.display = 'none';
+        btnNight.style.display = 'inline';
     }
 }
 
-// Function triggered by language toggle switch
-function setLanguage(lang) {
-    if (lang === currentLang) return;
-    
-    currentLang = lang;
-    
-    // Update active class on toggle buttons
-    document.getElementById('lang-en').classList.remove('active');
-    document.getElementById('lang-ja').classList.remove('active');
-    document.getElementById('lang-' + lang).classList.add('active');
+// Scroll Intersection Observers for Animations and Character Trigger
+let currentZone = 'hero';
 
-    // Add a quick fade out and fade in effect for smooth transition
-    const mainContent = document.querySelector('main');
-    mainContent.style.opacity = '0';
-    mainContent.style.transform = 'translateY(10px)';
-    mainContent.style.transition = 'all 0.3s ease';
-
-    setTimeout(() => {
-        applyTranslations(lang);
-        mainContent.style.opacity = '1';
-        mainContent.style.transform = 'translateY(0)';
-    }, 300);
-}
-
-// Initialize Translations on DOM Content Loaded
-document.addEventListener('DOMContentLoaded', () => {
-    applyTranslations(currentLang);
+document.addEventListener("DOMContentLoaded", () => {
     
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+    // Animate Timeline Items
+    const timelineItems = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
-    });
+    }, { threshold: 0.2 });
+
+    timelineItems.forEach(item => observer.observe(item));
+
+    // Animate Progress Bars (Skills)
+    const skillBars = document.querySelectorAll('.progress-fill');
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const targetWidth = entry.target.getAttribute('data-target');
+                entry.target.style.width = targetWidth;
+            }
+        });
+    }, { threshold: 0.5 });
+
+    skillBars.forEach(bar => skillObserver.observe(bar));
+
+    // Zone Tracking for Character Dialogue
+    const zones = document.querySelectorAll('.zone');
+    const zoneObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const zoneId = entry.target.getAttribute('data-zone');
+                if (zoneId !== currentZone) {
+                    currentZone = zoneId;
+                    updateMascotBubble(zoneId);
+                }
+            }
+        });
+    }, { threshold: 0.6 });
+
+    zones.forEach(zone => zoneObserver.observe(zone));
 });
+
+// Function to update mascot text with brief animation
+function updateMascotBubble(zoneId) {
+    const bubble = document.getElementById('mascot-bubble');
+    const key = `mascot-${zoneId}`;
+    
+    bubble.classList.remove('show');
+    
+    setTimeout(() => {
+        if (translations[currentLang][key]) {
+            bubble.textContent = translations[currentLang][key];
+            bubble.setAttribute('data-i18n', key);
+            bubble.classList.add('show');
+        }
+    }, 150); // Wait for fade out
+}
