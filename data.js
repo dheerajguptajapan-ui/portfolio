@@ -67,11 +67,11 @@ const translations = {
 
         "section-deeptech": "SAP Architecture & Processes",
         "tech-func-title": "Core Functional (SD)",
-        "tech-func-list": "Order-to-Cash (OTC) • Pricing Procedures • Enterprise Structure • BP Master • Output Determination • Copy Control • Shipping Point Determination • Sales Document Types",
+        "tech-func-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>Order-to-Cash (OTC)</li><li>Pricing Procedures</li><li>Enterprise Structure</li><li>BP Master</li><li>Output Determination</li><li>Copy Control</li><li>Shipping Point Determination</li><li>Sales Document Types</li><li>ATP Check</li><li>Route Determination</li><li>etc.</li></ul>",
         "tech-abap-title": "Technical & ABAP",
-        "tech-abap-list": "RICEFW Framework • BAPI Integration • BADI Implementations • User Exits • Custom Enhancements • IDOC/EDI Monitoring",
+        "tech-abap-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>RICEFW Framework</li><li>BAPI Integration</li><li>BADI Implementations</li><li>User Exits</li><li>Custom Enhancements</li><li>IDOC/EDI Monitoring</li></ul>",
         "tech-cloud-title": "Cloud & Integration",
-        "tech-cloud-list": "SAP BTP • Integration Suite • Cloud Connector • Java Connector (JCo / J4C) • Third-Party API Sync",
+        "tech-cloud-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>SAP BTP</li><li>Integration Suite</li><li>Cloud Connector</li><li>Java Connector (JCo)</li><li>J4C (Joule for Consultant)</li><li>J4D (Joule for Developer)</li><li>Third-Party API Sync</li></ul>",
 
         "section-certs": "Certifications",
         "cert-n2": "JLPT N2 (Aug 2025)",
@@ -99,7 +99,7 @@ const translations = {
         "mascot-contact": "スカイツリーから発信中！いつでもご連絡ください！",
 
         "hero-greeting": "こんにちは、",
-        "hero-name": "グプタ・ディラジュです",
+        "hero-name": "グプタ・ディラジュ",
         "hero-title": "SAP SD バイリンガルコンサルタント",
         "hero-subtitle": "東京在住 | OTC、データ移行、運用サポートの専門家",
         "btn-english": "📄 英語レジュメ (CV)",
@@ -157,11 +157,11 @@ const translations = {
 
         "section-deeptech": "SAPプロセスと技術アーキテクチャ",
         "tech-func-title": "コア機能 (SDプロセス)",
-        "tech-func-list": "Order-to-Cash (OTC) • 価格決定（Pricing） • 企業構造（Enterprise Structure） • BPマスタ • 出力決定（Output Determination） • コピコントロール • 出荷ポイント決定 • 販売伝票タイプ",
+        "tech-func-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>Order-to-Cash (OTC)</li><li>価格決定（Pricing）</li><li>企業構造（Enterprise Structure）</li><li>BPマスタ</li><li>出力決定（Output Determination）</li><li>コピコントロール</li><li>出荷ポイント決定</li><li>販売伝票タイプ</li><li>ATPチェック</li><li>ルート決定（Route Determination）</li><li>など</li></ul>",
         "tech-abap-title": "ABAP / 技術的専門知識",
-        "tech-abap-list": "RICEFWフレームワーク • BAPI連携 • BADI実装 • ユーザーエグジット（User Exits） • カスタム機能拡張 • IDOC/EDIモニタリング",
+        "tech-abap-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>RICEFWフレームワーク</li><li>BAPI連携</li><li>BADI実装</li><li>ユーザーエグジット（User Exits）</li><li>カスタム機能拡張</li><li>IDOC/EDIモニタリング</li></ul>",
         "tech-cloud-title": "クラウド / インテグレーション",
-        "tech-cloud-list": "SAP BTP • Integration Suite • Cloud Connector • Java Connector (JCo / J4C) • サードパーティAPI連携",
+        "tech-cloud-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>SAP BTP</li><li>Integration Suite</li><li>Cloud Connector</li><li>Java Connector (JCo)</li><li>J4C (Joule for Consultant)</li><li>J4D (Joule for Developer)</li><li>サードパーティAPI連携</li></ul>",
 
         "section-certs": "資格・認定",
         "cert-n2": "日本語能力試験 N2 (2025年8月)",

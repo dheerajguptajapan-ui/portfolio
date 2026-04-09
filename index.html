@@ -29,9 +29,9 @@
 
     <!-- Interactive Character Mascot -->
     <div class="mascot-container" id="mascot">
-        <div class="speech-bubble show" id="mascot-bubble" data-i18n="mascot-hero">Welcome to my Tokyo Park! Enjoy the tour!</div>
-        <img src="assets/3d_mascot.png" alt="Dheeraj Guide" class="mascot-img">
+        <img src="assets/3d_mascot.png" alt="Dheeraj Guide" class="mascot-img" draggable="false">
     </div>
+    <button class="mascot-toggle-btn" id="mascot-toggle" onclick="toggleMascot()" title="Hide Guide">✕</button>
 
     <main>
         <!-- Hero: Shibuya Zone -->
@@ -264,13 +264,13 @@
             <p style="text-align:center; font-size: 1.2rem; margin-bottom: 20px;" data-i18n="contact-desc">Ready to optimize your SAP processes in Japan? Let's connect!</p>
             
             <div class="contact-info">
-                <div class="info-item">
+                <div class="info-item" onclick="revealContact('email')" style="cursor: pointer;" title="Click to reveal email">
                     <span>📧</span>
-                    <a href="mailto:Dheerajguptajapan@gmail.com">Dheerajguptajapan@gmail.com</a>
+                    <span id="contact-email" data-val="Dheerajguptajapan@gmail.com">Dheerajgup*******@gmail.com</span>
                 </div>
-                <div class="info-item">
+                <div class="info-item" onclick="revealContact('phone')" style="cursor: pointer;" title="Click to reveal phone number">
                     <span>📱</span>
-                    <span>+81 070-9062-7702</span>
+                    <span id="contact-phone" data-val="+81 070-9062-7702">+81 070-90******</span>
                 </div>
                 <div class="info-item">
                     <span>📍</span>

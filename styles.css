@@ -135,8 +135,22 @@ h1, h2, h3, h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    pointer-events: none; /* Let clicks pass through */
+    cursor: grab;
     animation: float 2.5s ease-in-out infinite;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    touch-action: none;
+    user-select: none;
+}
+
+.mascot-container.dragging {
+    cursor: grabbing;
+    animation: none;
+}
+
+.mascot-container.collapsed {
+    transform: scale(0) !important;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .mascot-img {
@@ -149,40 +163,32 @@ body.night-theme .mascot-img {
     filter: drop-shadow(0 0 20px var(--accent-glow));
 }
 
-.speech-bubble {
-    background: var(--bubble-bg);
-    color: var(--bubble-text);
-    padding: 15px 25px;
-    border-radius: 20px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    position: relative;
+/* Mascot Toggle Button */
+.mascot-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1001;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     border: 2px solid var(--accent-color);
-    box-shadow: 0 5px 15px var(--accent-glow);
-    max-width: 250px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px var(--accent-glow);
+    transition: all 0.3s ease;
 }
 
-.speech-bubble.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.speech-bubble::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 10px 10px 0;
-    border-style: solid;
-    border-color: var(--accent-color) transparent transparent transparent;
-    display: block;
-    width: 0;
+.mascot-toggle-btn:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: scale(1.1);
 }
 
 /* Zones / Sections */
@@ -684,13 +690,217 @@ body.night-theme .petal {
     to { margin-left: 50px; }
 }
 
-/* Responsive */
+/* ==================== */
+/* Responsive - Tablet  */
+/* ==================== */
 @media (max-width: 768px) {
-    .name { font-size: 3rem; }
-    .title { font-size: 1.5rem; }
-    .mascot-container { left: -20px; transform: scale(0.7); }
-    .speech-bubble { font-size: 0.8rem; padding: 10px; }
+    .name { font-size: 2.8rem; }
+    .title { font-size: 1.3rem; }
+    .greeting { font-size: 1.2rem; }
+    .subtitle { font-size: 0.9rem; }
+    .section-title { font-size: 1.8rem; }
+    
+    .hero-content {
+        margin-top: 0;
+        padding: 25px;
+    }
+    
+    .hero-zone {
+        background-attachment: scroll; /* Fix iOS parallax bug */
+    }
+    
+    .glass-panel {
+        padding: 25px;
+        border-radius: 15px;
+    }
+    
+    .zone {
+        padding: 60px 15px;
+        min-height: auto;
+    }
+    
+    /* Controls */
+    .controls-container {
+        top: 10px;
+        right: 10px;
+        padding: 8px 14px;
+        gap: 10px;
+    }
+    
+    /* Mascot */
+    .mascot-container {
+        left: auto;
+        right: -10px;
+        bottom: -30px;
+        transform-origin: bottom right;
+    }
+    
+    .mascot-img {
+        width: 110px;
+    }
+    
+    .mascot-toggle-btn {
+        bottom: 15px;
+        left: auto;
+        right: 15px;
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    
+    /* Timeline */
     .timeline::before { left: 10px; }
     .timeline-item { padding-left: 40px; }
-    .timeline-item::before { left: 2px; }
+    .timeline-item::before { left: 2px; width: 16px; height: 16px; }
+    .timeline-content h4 { font-size: 1.1rem; }
+    .timeline-date { font-size: 0.8rem; }
+    
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Process / Architecture */
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Certifications */
+    .cert-badge {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+        border-radius: 20px;
+    }
+    
+    /* Contact */
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info-item {
+        width: 100%;
+        max-width: 400px;
+        font-size: 1rem;
+        padding: 12px 20px;
+        gap: 10px;
+    }
+    
+    /* Resume buttons */
+    .resume-downloads {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .btn-download {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+
+    /* About */
+    .about-panel p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+}
+
+/* ==================== */
+/* Responsive - Phone   */
+/* ==================== */
+@media (max-width: 480px) {
+    .name { font-size: 2rem; }
+    .title { font-size: 1.1rem; }
+    .greeting { font-size: 1rem; }
+    .section-title { font-size: 1.5rem; }
+    
+    .hero-content {
+        padding: 20px 15px;
+    }
+    
+    .zone {
+        padding: 40px 10px;
+    }
+    
+    .glass-panel {
+        padding: 20px 15px;
+    }
+    
+    /* Controls */
+    .controls-container {
+        top: 8px;
+        right: 8px;
+        padding: 6px 12px;
+        gap: 8px;
+        font-size: 0.85rem;
+    }
+    
+    .theme-toggle {
+        font-size: 1.2rem;
+    }
+    
+    /* Mascot - smaller on tiny screens */
+    .mascot-img {
+        width: 85px;
+    }
+    
+    .mascot-toggle-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    /* Timeline */
+    .timeline-item {
+        padding-left: 35px;
+        margin-bottom: 25px;
+        padding-right: 10px;
+    }
+    
+    .timeline::before { left: 8px; width: 3px; }
+    .timeline-item::before { left: 1px; width: 14px; height: 14px; top: 18px; }
+    .timeline-content h4 { font-size: 1rem; }
+    .timeline-content .company { font-size: 0.85rem; }
+    .timeline-content ul li { font-size: 0.85rem; padding-left: 15px; }
+    
+    /* Skill cards */
+    .skill-card h4 { font-size: 1.1rem; margin-bottom: 15px; }
+    .skill-info { font-size: 0.8rem; }
+    
+    /* Process cards */
+    .process-icon { font-size: 2.2rem; }
+    .process-card h4 { font-size: 1.1rem; }
+    .process-card p { font-size: 0.85rem; }
+    
+    /* Cert badges */
+    .cert-badge {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        gap: 6px;
+    }
+    
+    /* Contact */
+    .info-item {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+    
+    /* About */
+    .about-panel p {
+        font-size: 0.88rem;
+        line-height: 1.65;
+    }
+    
+    /* Resume downloads */
+    .btn-download {
+        font-size: 0.85rem;
+        padding: 10px 15px;
+    }
 }
