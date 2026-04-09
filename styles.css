@@ -19,6 +19,9 @@
     --bubble-bg: #ffffff;
     --bubble-text: #333;
     --hero-bg: url('assets/tokyo_day_bg.png');
+    /* MM P2P Theme (Emerald) */
+    --p2p-accent: #2ecc71;
+    --p2p-glow: rgba(46, 204, 113, 0.4);
 }
 
 body.night-theme {
@@ -35,6 +38,9 @@ body.night-theme {
     --bubble-bg: rgba(20, 20, 30, 0.9);
     --bubble-text: #00e5ff;
     --hero-bg: url('assets/tokyo_night_bg.png');
+    /* MM P2P Theme (Cyber Emerald) */
+    --p2p-accent: #00ff88;
+    --p2p-glow: rgba(0, 255, 136, 0.5);
 }
 
 body {
@@ -1240,4 +1246,41 @@ body.night-theme .highlight-node {
         font-size: 0.85rem;
         padding: 10px 15px;
     }
+}
+
+/* P2P Theme Overrides */
+.p2p-node {
+    border-color: var(--p2p-accent) !important;
+}
+
+.p2p-node:hover {
+    box-shadow: 0 0 15px var(--p2p-glow) !important;
+    background: rgba(46, 204, 113, 0.1);
+}
+
+body.night-theme .p2p-node:hover {
+    background: rgba(0, 255, 136, 0.15);
+}
+
+.p2p-node.highlight-node {
+    background: rgba(46, 204, 113, 0.15) !important;
+}
+
+body.night-theme .p2p-node.highlight-node {
+    background: rgba(0, 255, 136, 0.2) !important;
+}
+
+/* Integration Footer */
+.integration-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.integration-content {
+    width: 100%;
+}
+
+.integration-content ul li b {
+    color: var(--p2p-accent);
 }
