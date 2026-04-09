@@ -254,6 +254,7 @@ body.night-theme .mascot-img {
     margin-bottom: 10px;
     background: linear-gradient(45deg, var(--heading-color), var(--accent-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: fadeInUp 1s ease 0.2s both;
 }
