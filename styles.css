@@ -857,6 +857,12 @@ body.night-theme .petal {
         right: 10px;
     }
     
+    .activate-phases {
+        font-size: 0.9rem !important;
+        margin-top: 5px !important;
+        line-height: 1.4;
+    }
+
     /* Timeline */
     .timeline-item {
         padding-left: 35px;
