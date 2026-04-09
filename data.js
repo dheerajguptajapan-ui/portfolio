@@ -73,6 +73,21 @@ const translations = {
         "tech-abap-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>RICEFW Framework</li><li>BAPI Integration</li><li>BADI Implementations</li><li>User Exits</li><li>Custom Enhancements</li><li>IDOC/EDI Monitoring</li></ul>",
         "tech-cloud-title": "Cloud & Integration",
         "tech-cloud-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>SAP BTP</li><li>Integration Suite</li><li>Cloud Connector</li><li>Java Connector (JCo)</li><li>J4C (Joule for Consultant)</li><li>J4D (Joule for Developer)</li><li>Third-Party API Sync</li></ul>",
+        
+        "section-casestudies": "Architecture Case Studies",
+        "cs1-title": "Order-to-Cash (OTC) Flow",
+        "cs1-desc": "End-to-end integration mapping from order creation to final financial accounting.",
+        "cs1-n1": "Sales Order<br><span style='font-size:0.8em;opacity:0.8'>VA01</span>",
+        "cs1-n2": "Outbound Delivery<br><span style='font-size:0.8em;opacity:0.8'>VL01N</span>",
+        "cs1-n3": "Billing Document<br><span style='font-size:0.8em;opacity:0.8'>VF01</span>",
+        "cs1-n4": "Financial Accounting<br><span style='font-size:0.8em;opacity:0.8'>FI-AR</span>",
+        
+        "cs2-title": "System Landscape Migration",
+        "cs2-desc": "Seamless transition from legacy CRM to S/4HANA using standard IDOC/BAPI interfaces.",
+        "cs2-n1": "Legacy CRM",
+        "cs2-n2": "Integration Suite<br><span style='font-size:0.8em;opacity:0.8'>Middleware</span>",
+        "cs2-n3": "Data Mapping<br><span style='font-size:0.8em;opacity:0.8'>BAPI / IDOC</span>",
+        "cs2-n4": "SAP S/4HANA",
 
         "section-certs": "Certifications",
         "cert-n2": "JLPT N2 (Aug 2025)",
@@ -164,6 +179,21 @@ const translations = {
         "tech-abap-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>RICEFWフレームワーク</li><li>BAPI連携</li><li>BADI実装</li><li>ユーザーエグジット（User Exits）</li><li>カスタム機能拡張</li><li>IDOC/EDIモニタリング</li></ul>",
         "tech-cloud-title": "クラウド / インテグレーション",
         "tech-cloud-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>SAP BTP</li><li>Integration Suite</li><li>Cloud Connector</li><li>Java Connector (JCo)</li><li>J4C (Joule for Consultant)</li><li>J4D (Joule for Developer)</li><li>サードパーティAPI連携</li></ul>",
+
+        "section-casestudies": "アーキテクチャ事例 (Case Studies)",
+        "cs1-title": "Order-to-Cash (OTC) フロー",
+        "cs1-desc": "受注から財務会計までのエンドツーエンド決済統合マッピング。",
+        "cs1-n1": "受注登録<br><span style='font-size:0.8em;opacity:0.8'>VA01</span>",
+        "cs1-n2": "出荷伝票<br><span style='font-size:0.8em;opacity:0.8'>VL01N</span>",
+        "cs1-n3": "請求伝票<br><span style='font-size:0.8em;opacity:0.8'>VF01</span>",
+        "cs1-n4": "財務会計<br><span style='font-size:0.8em;opacity:0.8'>FI-AR</span>",
+
+        "cs2-title": "システムランドスケープ移行",
+        "cs2-desc": "標準IDOC/BAPIインターフェースを使用したレガシーCRMからS/4HANAへのシームレスな移行。",
+        "cs2-n1": "レガシー CRM",
+        "cs2-n2": "Integration Suite<br><span style='font-size:0.8em;opacity:0.8'>ミドルウェア</span>",
+        "cs2-n3": "データマッピング<br><span style='font-size:0.8em;opacity:0.8'>BAPI / IDOC</span>",
+        "cs2-n4": "SAP S/4HANA",
 
         "section-certs": "資格・認定",
         "cert-n2": "日本語能力試験 N2 (2025年8月)",
