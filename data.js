@@ -75,7 +75,7 @@ const translations = {
         "tech-cloud-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>SAP BTP</li><li>Integration Suite</li><li>Cloud Connector</li><li>J4C (Joule for Consultant)</li><li>J4D (Joule for Developer)</li><li>Third-Party API Sync</li></ul>",
         
         "section-casestudies": "Architecture Case Studies",
-        "cs1-title": "Panasonic Case Study: Global E2E OTC Flow",
+        "cs1-title": "Case Study 1: Global E2E OTC Flow",
         "cs1-desc": "End-to-end integration mapping from inquiry to final payment, demonstrating deep technical SAP SD architecture.",
         "cs1-n1": "Inquiry<br><span style='font-size:0.8em;opacity:0.8'>VA11</span>",
         "cs1-n2": "Quotation<br><span style='font-size:0.8em;opacity:0.8'>VA21</span>",
@@ -100,7 +100,7 @@ const translations = {
         "modal-pay-title": "Payment / Clearing (F-28)",
         "modal-pay-data": "<b>Concept:</b> Final step where customer payment is reconciled and AR is cleared.<br><br><b>Key Tables:</b><br>• <b>BSID:</b> Open AR Items<br>• <b>BSAD:</b> Cleared AR Items<br>• <b>BKPF / BSEG:</b> Financial Documents<br><br><b>T-Codes:</b> F-28, F-32, FBL5N (Customer Line Items)",
         
-        "cs2-title": "IDOC System Integration (Panasonic)",
+        "cs2-title": "Case Study 3: IDOC System Integration",
         "cs2-desc": "End-to-end IDOC setup from port configuration to fully automated document exchange with external systems.",
         "cs2-label-config": "⚙️ Configuration Setup — Click each step to explore",
         "cs2-n1": "Port Definition<br><span style='font-size:0.8em;opacity:0.8'>WE21</span>",
@@ -126,26 +126,26 @@ const translations = {
         "cs2-btn-ref": "📊 T-Codes, Tables & Status Codes Reference",
 
         "modal-we21-title": "Port Definition (WE21)",
-        "modal-we21-data": "<b>Purpose:</b> Defines WHERE SAP sends/receives IDOCs — the physical communication channel.<br><br><b>Panasonic Example:</b><br>• <b>Port Name:</b> TAPESTRY_PORT<br>• <b>Type:</b> File Port<br>• <b>Directory:</b> /usr/sap/interfaces/tapestry/<br><br><b>Port Types Available:</b><br>• File Port — filesystem exchange<br>• RFC Port — direct SAP-to-SAP<br>• HTTP/HTTPS — web service<br><br><b>Database Table:</b> TPROT (Port definitions)",
+        "modal-we21-data": "<b>Purpose:</b> Defines WHERE SAP sends/receives IDOCs — the physical communication channel.<br><br><b>Configuration Example:</b><br>• <b>Port Name:</b> TAPESTRY_PORT<br>• <b>Type:</b> File Port<br>• <b>Directory:</b> /usr/sap/interfaces/tapestry/<br><br><b>Port Types Available:</b><br>• File Port — filesystem exchange<br>• RFC Port — direct SAP-to-SAP<br>• HTTP/HTTPS — web service<br><br><b>Database Table:</b> TPROT (Port definitions)",
 
         "modal-we20-title": "Partner Profile (WE20)",
-        "modal-we20-data": "<b>Purpose:</b> Defines WHO, WHAT, and HOW for IDOC exchange.<br><br><b>Panasonic Setup:</b><br>• <b>Partner No:</b> TAPESTRY_US<br>• <b>Partner Type:</b> KU (Customer)<br>• <b>Direction:</b> Inbound + Outbound<br>• <b>Message Types:</b> ORDERS, INVOIC, DESADV<br><br><b>Database Tables:</b><br>• EDIPP — Partner profile header<br>• EDIPIA — Inbound parameters<br>• EDIPOA — Outbound parameters",
+        "modal-we20-data": "<b>Purpose:</b> Defines WHO, WHAT, and HOW for IDOC exchange.<br><br><b>Configuration Setup:</b><br>• <b>Partner No:</b> TAPESTRY_US<br>• <b>Partner Type:</b> KU (Customer)<br>• <b>Direction:</b> Inbound + Outbound<br>• <b>Message Types:</b> ORDERS, INVOIC, DESADV<br><br><b>Database Tables:</b><br>• EDIPP — Partner profile header<br>• EDIPIA — Inbound parameters<br>• EDIPOA — Outbound parameters",
 
         "modal-we57-title": "Message Type / IDOC Type Link (WE57)",
         "modal-we57-data": "<b>Purpose:</b> Maps Message Type → IDOC Type (defines the data structure for each document).<br><br><b>Example Mappings:</b><br>• ORDERS → ORDERS05<br>• INVOIC → INVOIC02<br>• DESADV → DESADV01<br><br><b>Related T-Codes:</b><br>• <b>WE31:</b> Create IDOC segments<br>• <b>WE30:</b> Create/display IDOC types<br>• <b>BD56:</b> ALE filter objects<br>• <b>WE57:</b> Message/IDOC assignment view",
 
         "modal-we42-title": "Process Code (WE41 / WE42)",
-        "modal-we42-data": "<b>Purpose:</b> Maps IDOC type → SAP Function Module to trigger on receipt or send.<br><br>• <b>WE41:</b> Outbound process codes<br>• <b>WE42:</b> Inbound process codes<br><br><b>Inbound Example (Panasonic):</b><br>• Process Code: <b>ORDE</b><br>• Message Type: ORDERS<br>• Function Module: IDOC_INPUT_ORDERS<br>→ Automatically creates a Sales Order in SAP<br><br>⚠️ <b>Important:</b> Wrong or missing process code = Status 51 error. Always verify WE42 settings after initial config.",
+        "modal-we42-data": "<b>Purpose:</b> Maps IDOC type → SAP Function Module to trigger on receipt or send.<br><br>• <b>WE41:</b> Outbound process codes<br>• <b>WE42:</b> Inbound process codes<br><br><b>Inbound Example:</b><br>• Process Code: <b>ORDE</b><br>• Message Type: ORDERS<br>• Function Module: IDOC_INPUT_ORDERS<br>→ Automatically creates a Sales Order in SAP<br><br>⚠️ <b>Important:</b> Wrong or missing process code = Status 51 error. Always verify WE42 settings after initial config.",
 
         "modal-nace-title": "Output Type Configuration (NACE)",
-        "modal-nace-data": "<b>Purpose:</b> Triggers automatic IDOC creation when SAP documents are saved.<br><br><b>Panasonic Config:</b><br>• Output Type: <b>EDI1</b><br>• Medium: <b>6 (EDI)</b><br>• Partner Function: SP (Sold-to Party)<br><br><b>Trigger Chain:</b><br>VF01 saved → NACE fires EDI1 → IDOC Status 01 → dispatched via port → Status 12 (dispatch OK)<br><br><b>Key Point:</b> Without NACE, IDOCs must be created manually. Proper config enables full automation.",
+        "modal-nace-data": "<b>Purpose:</b> Triggers automatic IDOC creation when SAP documents are saved.<br><br><b>Configuration Example:</b><br>• Output Type: <b>EDI1</b><br>• Medium: <b>6 (EDI)</b><br>• Partner Function: SP (Sold-to Party)<br><br><b>Trigger Chain:</b><br>VF01 saved → NACE fires EDI1 → IDOC Status 01 → dispatched via port → Status 12 (dispatch OK)<br><br><b>Key Point:</b> Without NACE, IDOCs must be created manually. Proper config enables full automation.",
 
         "modal-idoc-ref-title": "IDOC Reference: T-Codes, Tables & Status Codes",
         "modal-idoc-ref-data": "<b>Configuration T-Codes</b><br>• <b>WE20</b> — Partner Profile setup<br>• <b>WE21</b> — Port configuration<br>• <b>WE30/31</b> — IDOC types &amp; segments<br>• <b>WE57</b> — Message/IDOC type assignment<br>• <b>WE41/42</b> — Outbound/Inbound process codes<br>• <b>NACE</b> — Output type config<br>• <b>BD64</b> — ALE Distribution Model<br><br><b>Monitoring T-Codes</b><br>• <b>WE02/WE05</b> — Display/list IDOCs<br>• <b>WE09</b> — Search IDOCs by content<br>• <b>WE19</b> — Test/reprocess IDOC manually<br>• <b>BD87</b> — Reprocess failed inbound<br>• <b>WE15</b> — Reprocess failed outbound<br><br><b>Key Database Tables</b><br>• <b>EDIDC</b> — IDOC Control Records (header)<br>• <b>EDID4</b> — IDOC Data Records (content)<br>• <b>EDIDS</b> — IDOC Status Records<br>• <b>EDIPP / EDIPIA / EDIPOA</b> — Partner profile<br>• <b>TPROT</b> — Port definitions<br><br><b>Critical Status Codes</b><br>• <b>01</b> — IDOC generated<br>• <b>03</b> — Data passed to port<br>• <b>12</b> — Dispatch OK ✅<br>• <b>16</b> — Functional ACK received ✅<br>• <b style='color:#f87171'>51</b> — Error in application ⚠️ Investigate!<br>• <b style='color:#f87171'>56</b> — IDOC with errors ⚠️ Check data<br>• <b>53</b> — Successfully posted ✅ Complete",
 
         "cs2-quote": "At Tapestry, I monitored inbound IDOCs daily using WE02 and WE05. When IDOCs failed with status 51, I analyzed the error at segment level, checked the partner profile configuration in WE20, verified the process code in WE42, and either resolved it functionally or raised it to the ABAP team with a detailed analysis. I also used BD87 to reprocess failed IDOCs after fixes were applied.",
 
-        "cs3-title": "Case Study 3: Global MM P2P Flow",
+        "cs3-title": "Case Study 2: Global MM P2P Flow",
         "cs3-desc": "Procure-to-Pay lifecycle from internal requisition to final vendor payment, mapping critical MM technical dependencies.",
         "cs3-n1": "Purchase Req<br><span style='font-size:0.8em;opacity:0.8'>ME51N</span>",
         "cs3-n2": "RFQ<br><span style='font-size:0.8em;opacity:0.8'>ME41</span>",
@@ -261,7 +261,7 @@ const translations = {
         "tech-cloud-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>SAP BTP</li><li>Integration Suite</li><li>Cloud Connector</li><li>J4C (Joule for Consultant)</li><li>J4D (Joule for Developer)</li><li>サードパーティAPI連携</li></ul>",
 
         "section-casestudies": "アーキテクチャ事例 (Case Studies)",
-        "cs1-title": "パナソニック 事例：グローバル E2E OTCフロー",
+        "cs1-title": "事例 1：グローバル E2E OTCフロー",
         "cs1-desc": "引き合いから最終入金までをマッピング。SAP SDの高度な技術アーキテクチャを示します。",
         "cs1-n1": "引き合い<br><span style='font-size:0.8em;opacity:0.8'>VA11</span>",
         "cs1-n2": "見積<br><span style='font-size:0.8em;opacity:0.8'>VA21</span>",
@@ -286,7 +286,7 @@ const translations = {
         "modal-pay-title": "入金 / 消込 (F-28)",
         "modal-pay-data": "<b>概要:</b> 最終ステップ。顧客からの入金を照合し、売掛金を消し込みます。<br><br><b>主要テーブル:</b><br>• <b>BSID:</b> 未消込債権明細<br>• <b>BSAD:</b> 消込済債権明細<br>• <b>BKPF / BSEG:</b> 財務会計伝票<br><br><b>Tコード:</b> F-28, F-32, FBL5N (得意先明細表示)",
 
-        "cs2-title": "IDOCによるシステム統合 (パナソニック)",
+        "cs2-title": "事例 3：IDOCによるシステム統合",
         "cs2-desc": "ポート設定から外部システムとの完全自動伝票交換まで、エンドツーエンドのIDOCセットアップ。",
         "cs2-label-config": "⚙️ 設定セットアップ — 各ステップをクリックして詳細を表示",
         "cs2-n1": "ポート定義<br><span style='font-size:0.8em;opacity:0.8'>WE21</span>",
@@ -312,27 +312,27 @@ const translations = {
         "cs2-btn-ref": "📊 Tコード、テーブル、ステータスコードのリファレンス",
 
         "modal-we21-title": "ポート定義 (WE21)",
-        "modal-we21-data": "<b>目的:</b> IDOCの送受信先（物理的な通信チャネル）を定義します。<br><br><b>パナソニック設定例:</b><br>• <b>ポート名:</b> TAPESTRY_PORT<br>• <b>タイプ:</b> ファイルポート<br>• <b>ディレクトリ:</b> /usr/sap/interfaces/tapestry/<br><br><b>利用可能なポートタイプ:</b><br>• ファイルポート — ファイルシステム経由<br>• RFCポート — SAP間直接接続<br>• HTTP/HTTPS — Webサービス<br><br><b>データベーステーブル:</b> TPROT",
+        "modal-we21-data": "<b>目的:</b> IDOCの送受信先（物理的な通信チャネル）を定義します。<br><br><b>設定例:</b><br>• <b>ポート名:</b> TAPESTRY_PORT<br>• <b>タイプ:</b> ファイルポート<br>• <b>ディレクトリ:</b> /usr/sap/interfaces/tapestry/<br><br><b>利用可能なポートタイプ:</b><br>• ファイルポート — ファイルシステム経由<br>• RFCポート — SAP間直接接続<br>• HTTP/HTTPS — Webサービス<br><br><b>データベーステーブル:</b> TPROT",
 
         "modal-we20-title": "パートナープロファイル (WE20)",
-        "modal-we20-data": "<b>目的:</b> IDOC交換の相手先・内容・方法を定義します。<br><br><b>パナソニック設定:</b><br>• <b>パートナー番号:</b> TAPESTRY_US<br>• <b>パートナータイプ:</b> KU（得意先）<br>• <b>方向:</b> 受信 + 送信<br>• <b>メッセージタイプ:</b> ORDERS, INVOIC, DESADV<br><br><b>データベーステーブル:</b><br>• EDIPP — パートナープロファイルヘッダ<br>• EDIPIA — 受信パラメータ<br>• EDIPOA — 送信パラメータ",
+        "modal-we20-data": "<b>目的:</b> IDOC交換の相手先・内容・方法を定義します。<br><br><b>設定:</b><br>• <b>パートナー番号:</b> TAPESTRY_US<br>• <b>パートナータイプ:</b> KU（得意先）<br>• <b>方向:</b> 受信 + 送信<br>• <b>メッセージタイプ:</b> ORDERS, INVOIC, DESADV<br><br><b>データベーステーブル:</b><br>• EDIPP — パートナープロファイルヘッダ<br>• EDIPIA — 受信パラメータ<br>• EDIPOA — 送信パラメータ",
 
         "modal-we57-title": "メッセージタイプ / IDOCタイプリンク (WE57)",
         "modal-we57-data": "<b>目的:</b> メッセージタイプ → IDOCタイプのマッピング（各伝票のデータ構造定義）。<br><br><b>マッピング例:</b><br>• ORDERS → ORDERS05<br>• INVOIC → INVOIC02<br>• DESADV → DESADV01<br><br><b>関連Tコード:</b><br>• <b>WE31:</b> IDOCセグメント作成<br>• <b>WE30:</b> IDOCタイプ表示/作成<br>• <b>BD56:</b> ALEフィルタオブジェクト",
 
         "modal-we42-title": "プロセスコード (WE41 / WE42)",
-        "modal-we42-data": "<b>目的:</b> IDOCタイプ → 実行するSAP機能モジュールのマッピング。<br><br>• <b>WE41:</b> 送信プロセスコード<br>• <b>WE42:</b> 受信プロセスコード<br><br><b>受信例（パナソニック）:</b><br>• プロセスコード: <b>ORDE</b><br>• メッセージタイプ: ORDERS<br>• 機能モジュール: IDOC_INPUT_ORDERS<br>→ 受注を自動的に作成<br><br>⚠️ <b>重要:</b> プロセスコードが誤っている場合、ステータス51エラーが発生します。",
+        "modal-we42-data": "<b>目的:</b> IDOCタイプ → 実行するSAP機能モジュールのマッピング。<br><br>• <b>WE41:</b> 送信プロセスコード<br>• <b>WE42:</b> 受信プロセスコード<br><br><b>受信例:</b><br>• プロセスコード: <b>ORDE</b><br>• メッセージタイプ: ORDERS<br>• 機能モジュール: IDOC_INPUT_ORDERS<br>→ 受注を自動的に作成<br><br>⚠️ <b>重要:</b> プロセスコードが誤っている場合、ステータス51エラーが発生します。",
 
         "modal-nace-title": "出力タイプ設定 (NACE)",
-        "modal-nace-data": "<b>目的:</b> SAP伝票保存時にIDOC自動生成をトリガーします。<br><br><b>パナソニック設定:</b><br>• 出力タイプ: <b>EDI1</b><br>• 媒体: <b>6（EDI）</b><br>• 相手先機能: SP（受注先）<br><br><b>トリガーチェーン:</b><br>VF01保存 → NACE EDI1起動 → IDOC ステータス01 → ポート経由送信 → ステータス12<br><br><b>ポイント:</b> NACE設定なしでは手動でIDOCを作成する必要があります。",
+        "modal-nace-data": "<b>目的:</b> SAP伝票保存時にIDOC自動生成をトリガーします。<br><br><b>設定:</b><br>• 出力タイプ: <b>EDI1</b><br>• 媒体: <b>6（EDI）</b><br>• 相手先機能: SP（受注先）<br><br><b>トリガーチェーン:</b><br>VF01保存 → NACE EDI1起動 → IDOC ステータス01 → ポート経由送信 → ステータス12<br><br><b>ポイント:</b> NACE設定なしでは手動でIDOCを作成する必要があります。",
 
         "modal-idoc-ref-title": "IDOCリファレンス: Tコード・テーブル・ステータスコード",
         "modal-idoc-ref-data": "<b>設定Tコード</b><br>• <b>WE20</b> — パートナープロファイル<br>• <b>WE21</b> — ポート設定<br>• <b>WE30/31</b> — IDOCタイプ/セグメント<br>• <b>WE57</b> — MSG/IDOCタイプ割当<br>• <b>WE41/42</b> — 送受信プロセスコード<br>• <b>NACE</b> — 出力タイプ設定<br>• <b>BD64</b> — ALEディストリビューションモデル<br><br><b>監視Tコード</b><br>• <b>WE02/WE05</b> — IDOC表示/一覧<br>• <b>WE09</b> — コンテンツ検索<br>• <b>WE19</b> — テスト/再処理<br>• <b>BD87</b> — 受信失敗IDOCの再処理<br>• <b>WE15</b> — 送信失敗IDOCの再処理<br><br><b>主要データベーステーブル</b><br>• <b>EDIDC</b> — IDOCコントロールレコード（ヘッダ）<br>• <b>EDID4</b> — IDOCデータレコード（内容）<br>• <b>EDIDS</b> — IDOCステータスレコード<br>• <b>EDIPP/EDIPIA/EDIPOA</b> — パートナープロファイル<br>• <b>TPROT</b> — ポート定義<br><br><b>重要ステータスコード</b><br>• <b>01</b> — IDOC生成済<br>• <b>12</b> — 送信OK ✅<br>• <b>16</b> — 機能確認応答受信 ✅<br>• <b style='color:#f87171'>51</b> — アプリケーションエラー ⚠️<br>• <b style='color:#f87171'>56</b> — エラーあり ⚠️<br>• <b>53</b> — 正常転記 ✅",
 
         "cs2-quote": "Tapestryでは、WE02とWE05を使用して毎日受信IDOCを監視していました。IDOCがステータス51で失敗した場合、セグメントレベルでエラーを分析し、WE20でパートナープロファイル設定を確認、WE42でプロセスコードを検証し、機能的に解決するかABAPチームに詳細な分析を共有して対応を依頼しました。修正適用後はBD87を使用して失敗したIDOCを再処理しました。",
 
-        "cs3-title": "パナソニック 事例：グローバル MM P2Pフロー",
-        "cs3-desc": "購入依頼から最終的なベンダー支払いまでのライフサイクル。SAP MMの高度な技術的依存関係をマッピング。",
+        "cs3-title": "事例 2：グローバル MM P2Pフロー",
+        "cs3-desc": "購入依頼から最終的なベンダー支払いまでのライフサイクル。SAP MMの高度な技術적依存関係をマッピング。",
         "cs3-n1": "購入依頼<br><span style='font-size:0.8em;opacity:0.8'>ME51N</span>",
         "cs3-n2": "見積依頼 (RFQ)<br><span style='font-size:0.8em;opacity:0.8'>ME41</span>",
         "cs3-n3": "購買発注 (PO)<br><span style='font-size:0.8em;opacity:0.8'>ME21N</span>",
