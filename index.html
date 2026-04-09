@@ -271,6 +271,34 @@
                     </div>
                 </div>
 
+                <!-- Case Study 3: MM P2P Flow -->
+                <div class="cs-card glass-panel animate-on-scroll">
+                    <h4 data-i18n="cs3-title">Case Study 3: Global MM P2P Flow</h4>
+                    <p class="cs-desc" data-i18n="cs3-desc">Purchase Requisition to final vendor payment, mapping critical SAP MM technical dependencies.</p>
+                    
+                    <div class="flow-chart">
+                        <div class="flow-node interactive-node p2p-node" data-i18n="cs3-n1" onclick="openOtcModal('p2p-pr')" title="Purchase Requisition">PR<br><span style='font-size:0.8em;opacity:0.8'>ME51N</span></div>
+                        <div class="flow-arrow">➔</div>
+                        <div class="flow-node interactive-node p2p-node" data-i18n="cs3-n2" onclick="openOtcModal('p2p-rfq')" title="Request for Quotation">RFQ<br><span style='font-size:0.8em;opacity:0.8'>ME41</span></div>
+                        <div class="flow-arrow">➔</div>
+                        <div class="flow-node interactive-node highlight-node p2p-node" data-i18n="cs3-n3" onclick="openOtcModal('p2p-po')" title="Purchase Order Deep-Dive">PO<br><span style='font-size:0.8em;opacity:0.8'>ME21N</span></div>
+                        <div class="flow-arrow">➔</div>
+                        <div class="flow-node interactive-node p2p-node" data-i18n="cs3-n4" onclick="openOtcModal('p2p-gr')" title="Goods Receipt">GR<br><span style='font-size:0.8em;opacity:0.8'>MIGO</span></div>
+                        <div class="flow-arrow">➔</div>
+                        <div class="flow-node interactive-node p2p-node" data-i18n="cs3-n5" onclick="openOtcModal('p2p-iv')" title="Invoice Verification">IV<br><span style='font-size:0.8em;opacity:0.8'>MIRO</span></div>
+                        <div class="flow-arrow">➔</div>
+                        <div class="flow-node interactive-node p2p-node" data-i18n="cs3-n6" onclick="openOtcModal('p2p-pay')" title="Payment Execution">Pay<br><span style='font-size:0.8em;opacity:0.8'>F110</span></div>
+                    </div>
+
+                    <!-- MM-SD Integration Section -->
+                    <div class="integration-footer" style="margin-top:20px; border-top: 1px solid rgba(255,255,255,0.05); padding-top:10px;">
+                        <h5 class="flow-label" data-i18n="cs3-integ-title" style="margin-bottom:0px;">🔄 MM-SD Integration Points</h5>
+                        <div class="integration-content" data-i18n="cs3-integ-list">
+                            <!-- Injected from data.js -->
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Case Study 2: IDOC System Integration -->
                 <div class="cs-card glass-panel animate-on-scroll">
                     <h4 data-i18n="cs2-title">IDOC System Integration (Panasonic)</h4>
@@ -341,33 +369,6 @@
                     </blockquote>
                 </div>
 
-                <!-- Case Study 3: MM P2P Flow -->
-                <div class="cs-card glass-panel animate-on-scroll">
-                    <h4 data-i18n="cs3-title">Case Study 3: Global MM P2P Flow</h4>
-                    <p class="cs-desc" data-i18n="cs3-desc">Purchase Requisition to final vendor payment, mapping critical SAP MM technical dependencies.</p>
-                    
-                    <div class="flow-chart">
-                        <div class="flow-node interactive-node p2p-node" data-i18n="cs3-n1" onclick="openOtcModal('p2p-pr')" title="Purchase Requisition">PR<br><span style='font-size:0.8em;opacity:0.8'>ME51N</span></div>
-                        <div class="flow-arrow">➔</div>
-                        <div class="flow-node interactive-node p2p-node" data-i18n="cs3-n2" onclick="openOtcModal('p2p-rfq')" title="Request for Quotation">RFQ<br><span style='font-size:0.8em;opacity:0.8'>ME41</span></div>
-                        <div class="flow-arrow">➔</div>
-                        <div class="flow-node interactive-node highlight-node p2p-node" data-i18n="cs3-n3" onclick="openOtcModal('p2p-po')" title="Purchase Order Deep-Dive">PO<br><span style='font-size:0.8em;opacity:0.8'>ME21N</span></div>
-                        <div class="flow-arrow">➔</div>
-                        <div class="flow-node interactive-node p2p-node" data-i18n="cs3-n4" onclick="openOtcModal('p2p-gr')" title="Goods Receipt">GR<br><span style='font-size:0.8em;opacity:0.8'>MIGO</span></div>
-                        <div class="flow-arrow">➔</div>
-                        <div class="flow-node interactive-node p2p-node" data-i18n="cs3-n5" onclick="openOtcModal('p2p-iv')" title="Invoice Verification">IV<br><span style='font-size:0.8em;opacity:0.8'>MIRO</span></div>
-                        <div class="flow-arrow">➔</div>
-                        <div class="flow-node interactive-node p2p-node" data-i18n="cs3-n6" onclick="openOtcModal('p2p-pay')" title="Payment Execution">Pay<br><span style='font-size:0.8em;opacity:0.8'>F110</span></div>
-                    </div>
-
-                    <!-- MM-SD Integration Section -->
-                    <div class="integration-footer" style="margin-top:20px; border-top: 1px solid rgba(255,255,255,0.05); padding-top:10px;">
-                        <h5 class="flow-label" data-i18n="cs3-integ-title" style="margin-bottom:0px;">🔄 MM-SD Integration Points</h5>
-                        <div class="integration-content" data-i18n="cs3-integ-list">
-                            <!-- Injected from data.js -->
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
