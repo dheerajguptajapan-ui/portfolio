@@ -72,7 +72,7 @@ const translations = {
         "tech-abap-title": "Technical & ABAP",
         "tech-abap-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>RICEFW Framework</li><li>BAPI Integration</li><li>BADI Implementations</li><li>User Exits</li><li>Custom Enhancements</li><li>IDOC/EDI Monitoring</li></ul>",
         "tech-cloud-title": "Cloud & Integration",
-        "tech-cloud-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>SAP BTP</li><li>Integration Suite</li><li>Cloud Connector</li><li>Java Connector (JCo)</li><li>J4C (Joule for Consultant)</li><li>J4D (Joule for Developer)</li><li>Third-Party API Sync</li></ul>",
+        "tech-cloud-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>SAP BTP</li><li>Integration Suite</li><li>Cloud Connector</li><li>J4C (Joule for Consultant)</li><li>J4D (Joule for Developer)</li><li>Third-Party API Sync</li></ul>",
         
         "section-casestudies": "Architecture Case Studies",
         "cs1-title": "Panasonic Case Study: Global E2E OTC Flow",
@@ -231,7 +231,7 @@ const translations = {
         "tech-abap-title": "ABAP / 技術的専門知識",
         "tech-abap-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>RICEFWフレームワーク</li><li>BAPI連携</li><li>BADI実装</li><li>ユーザーエグジット（User Exits）</li><li>カスタム機能拡張</li><li>IDOC/EDIモニタリング</li></ul>",
         "tech-cloud-title": "クラウド / インテグレーション",
-        "tech-cloud-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>SAP BTP</li><li>Integration Suite</li><li>Cloud Connector</li><li>Java Connector (JCo)</li><li>J4C (Joule for Consultant)</li><li>J4D (Joule for Developer)</li><li>サードパーティAPI連携</li></ul>",
+        "tech-cloud-list": "<ul style='text-align:left; padding-left:20px; list-style-type:square; font-size:0.95rem; line-height:1.8; margin-top:10px;'><li>SAP BTP</li><li>Integration Suite</li><li>Cloud Connector</li><li>J4C (Joule for Consultant)</li><li>J4D (Joule for Developer)</li><li>サードパーティAPI連携</li></ul>",
 
         "section-casestudies": "アーキテクチャ事例 (Case Studies)",
         "cs1-title": "パナソニック 事例：グローバル E2E OTCフロー",
