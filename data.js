@@ -97,12 +97,26 @@ const translations = {
         "modal-inv-title": "Billing / Invoice (VF01)",
         "modal-inv-data": "<b>Concept:</b> Customer invoice generated and revenue posted to FI. Completes the SD lifecycle.<br><br><b>Key Tables:</b><br>• <b>VBRK:</b> Billing Document Header<br>• <b>VBRP:</b> Billing Document Item<br>• <b>BKPF / BSEG:</b> Financial Accounting Document",
         
-        "cs2-title": "System Landscape Migration",
-        "cs2-desc": "Seamless transition from legacy CRM to S/4HANA using standard IDOC/BAPI interfaces.",
-        "cs2-n1": "Legacy CRM",
-        "cs2-n2": "Integration Suite<br><span style='font-size:0.8em;opacity:0.8'>Middleware</span>",
-        "cs2-n3": "Data Mapping<br><span style='font-size:0.8em;opacity:0.8'>BAPI / IDOC</span>",
-        "cs2-n4": "SAP S/4HANA",
+        "cs2-title": "IDOC System Integration (Panasonic)",
+        "cs2-desc": "End-to-end IDOC setup from port configuration to fully automated document exchange with external systems.",
+
+        "modal-we21-title": "Port Definition (WE21)",
+        "modal-we21-data": "<b>Purpose:</b> Defines WHERE SAP sends/receives IDOCs — the physical communication channel.<br><br><b>Panasonic Example:</b><br>• <b>Port Name:</b> TAPESTRY_PORT<br>• <b>Type:</b> File Port<br>• <b>Directory:</b> /usr/sap/interfaces/tapestry/<br><br><b>Port Types Available:</b><br>• File Port — filesystem exchange<br>• RFC Port — direct SAP-to-SAP<br>• HTTP/HTTPS — web service<br><br><b>Database Table:</b> TPROT (Port definitions)",
+
+        "modal-we20-title": "Partner Profile (WE20)",
+        "modal-we20-data": "<b>Purpose:</b> Defines WHO, WHAT, and HOW for IDOC exchange.<br><br><b>Panasonic Setup:</b><br>• <b>Partner No:</b> TAPESTRY_US<br>• <b>Partner Type:</b> KU (Customer)<br>• <b>Direction:</b> Inbound + Outbound<br>• <b>Message Types:</b> ORDERS, INVOIC, DESADV<br><br><b>Database Tables:</b><br>• EDIPP — Partner profile header<br>• EDIPIA — Inbound parameters<br>• EDIPOA — Outbound parameters",
+
+        "modal-we57-title": "Message Type / IDOC Type Link (WE57)",
+        "modal-we57-data": "<b>Purpose:</b> Maps Message Type → IDOC Type (defines the data structure for each document).<br><br><b>Example Mappings:</b><br>• ORDERS → ORDERS05<br>• INVOIC → INVOIC02<br>• DESADV → DESADV01<br><br><b>Related T-Codes:</b><br>• <b>WE31:</b> Create IDOC segments<br>• <b>WE30:</b> Create/display IDOC types<br>• <b>BD56:</b> ALE filter objects<br>• <b>WE57:</b> Message/IDOC assignment view",
+
+        "modal-we42-title": "Process Code (WE41 / WE42)",
+        "modal-we42-data": "<b>Purpose:</b> Maps IDOC type → SAP Function Module to trigger on receipt or send.<br><br>• <b>WE41:</b> Outbound process codes<br>• <b>WE42:</b> Inbound process codes<br><br><b>Inbound Example (Panasonic):</b><br>• Process Code: <b>ORDE</b><br>• Message Type: ORDERS<br>• Function Module: IDOC_INPUT_ORDERS<br>→ Automatically creates a Sales Order in SAP<br><br>⚠️ <b>Important:</b> Wrong or missing process code = Status 51 error. Always verify WE42 settings after initial config.",
+
+        "modal-nace-title": "Output Type Configuration (NACE)",
+        "modal-nace-data": "<b>Purpose:</b> Triggers automatic IDOC creation when SAP documents are saved.<br><br><b>Panasonic Config:</b><br>• Output Type: <b>EDI1</b><br>• Medium: <b>6 (EDI)</b><br>• Partner Function: SP (Sold-to Party)<br><br><b>Trigger Chain:</b><br>VF01 saved → NACE fires EDI1 → IDOC Status 01 → dispatched via port → Status 12 (dispatch OK)<br><br><b>Key Point:</b> Without NACE, IDOCs must be created manually. Proper config enables full automation.",
+
+        "modal-idoc-ref-title": "IDOC Reference: T-Codes, Tables & Status Codes",
+        "modal-idoc-ref-data": "<b>Configuration T-Codes</b><br>• <b>WE20</b> — Partner Profile setup<br>• <b>WE21</b> — Port configuration<br>• <b>WE30/31</b> — IDOC types &amp; segments<br>• <b>WE57</b> — Message/IDOC type assignment<br>• <b>WE41/42</b> — Outbound/Inbound process codes<br>• <b>NACE</b> — Output type config<br>• <b>BD64</b> — ALE Distribution Model<br><br><b>Monitoring T-Codes</b><br>• <b>WE02/WE05</b> — Display/list IDOCs<br>• <b>WE09</b> — Search IDOCs by content<br>• <b>WE19</b> — Test/reprocess IDOC manually<br>• <b>BD87</b> — Reprocess failed inbound<br>• <b>WE15</b> — Reprocess failed outbound<br><br><b>Key Database Tables</b><br>• <b>EDIDC</b> — IDOC Control Records (header)<br>• <b>EDID4</b> — IDOC Data Records (content)<br>• <b>EDIDS</b> — IDOC Status Records<br>• <b>EDIPP / EDIPIA / EDIPOA</b> — Partner profile<br>• <b>TPROT</b> — Port definitions<br><br><b>Critical Status Codes</b><br>• <b>01</b> — IDOC generated<br>• <b>03</b> — Data passed to port<br>• <b>12</b> — Dispatch OK ✅<br>• <b>16</b> — Functional ACK received ✅<br>• <b style='color:#f87171'>51</b> — Error in application ⚠️ Investigate!<br>• <b style='color:#f87171'>56</b> — IDOC with errors ⚠️ Check data<br>• <b>53</b> — Successfully posted ✅ Complete",
 
         "section-certs": "Certifications",
         "cert-n2": "JLPT N2 (Aug 2025)",
@@ -218,12 +232,26 @@ const translations = {
         "modal-inv-title": "請求 / インボイス (VF01)",
         "modal-inv-data": "<b>概要:</b> 顧客の請求書が生成され、収益がFIに転記されます。SDライフサイクルが完了します。<br><br><b>主要テーブル:</b><br>• <b>VBRK:</b> 請求伝票ヘッダ<br>• <b>VBRP:</b> 請求伝票明細<br>• <b>BKPF / BSEG:</b> 財務会計伝票",
 
-        "cs2-title": "システムランドスケープ移行",
-        "cs2-desc": "標準IDOC/BAPIインターフェースを使用したレガシーCRMからS/4HANAへのシームレスな移行。",
-        "cs2-n1": "レガシー CRM",
-        "cs2-n2": "Integration Suite<br><span style='font-size:0.8em;opacity:0.8'>ミドルウェア</span>",
-        "cs2-n3": "データマッピング<br><span style='font-size:0.8em;opacity:0.8'>BAPI / IDOC</span>",
-        "cs2-n4": "SAP S/4HANA",
+        "cs2-title": "IDOCによるシステム統合 (パナソニック)",
+        "cs2-desc": "ポート設定から外部システムとの完全自動伝票交換まで、エンドツーエンドのIDOCセットアップ。",
+
+        "modal-we21-title": "ポート定義 (WE21)",
+        "modal-we21-data": "<b>目的:</b> IDOCの送受信先（物理的な通信チャネル）を定義します。<br><br><b>パナソニック設定例:</b><br>• <b>ポート名:</b> TAPESTRY_PORT<br>• <b>タイプ:</b> ファイルポート<br>• <b>ディレクトリ:</b> /usr/sap/interfaces/tapestry/<br><br><b>利用可能なポートタイプ:</b><br>• ファイルポート — ファイルシステム経由<br>• RFCポート — SAP間直接接続<br>• HTTP/HTTPS — Webサービス<br><br><b>データベーステーブル:</b> TPROT",
+
+        "modal-we20-title": "パートナープロファイル (WE20)",
+        "modal-we20-data": "<b>目的:</b> IDOC交換の相手先・内容・方法を定義します。<br><br><b>パナソニック設定:</b><br>• <b>パートナー番号:</b> TAPESTRY_US<br>• <b>パートナータイプ:</b> KU（得意先）<br>• <b>方向:</b> 受信 + 送信<br>• <b>メッセージタイプ:</b> ORDERS, INVOIC, DESADV<br><br><b>データベーステーブル:</b><br>• EDIPP — パートナープロファイルヘッダ<br>• EDIPIA — 受信パラメータ<br>• EDIPOA — 送信パラメータ",
+
+        "modal-we57-title": "メッセージタイプ / IDOCタイプリンク (WE57)",
+        "modal-we57-data": "<b>目的:</b> メッセージタイプ → IDOCタイプのマッピング（各伝票のデータ構造定義）。<br><br><b>マッピング例:</b><br>• ORDERS → ORDERS05<br>• INVOIC → INVOIC02<br>• DESADV → DESADV01<br><br><b>関連Tコード:</b><br>• <b>WE31:</b> IDOCセグメント作成<br>• <b>WE30:</b> IDOCタイプ表示/作成<br>• <b>BD56:</b> ALEフィルタオブジェクト",
+
+        "modal-we42-title": "プロセスコード (WE41 / WE42)",
+        "modal-we42-data": "<b>目的:</b> IDOCタイプ → 実行するSAP機能モジュールのマッピング。<br><br>• <b>WE41:</b> 送信プロセスコード<br>• <b>WE42:</b> 受信プロセスコード<br><br><b>受信例（パナソニック）:</b><br>• プロセスコード: <b>ORDE</b><br>• メッセージタイプ: ORDERS<br>• 機能モジュール: IDOC_INPUT_ORDERS<br>→ 受注を自動的に作成<br><br>⚠️ <b>重要:</b> プロセスコードが誤っている場合、ステータス51エラーが発生します。",
+
+        "modal-nace-title": "出力タイプ設定 (NACE)",
+        "modal-nace-data": "<b>目的:</b> SAP伝票保存時にIDOC自動生成をトリガーします。<br><br><b>パナソニック設定:</b><br>• 出力タイプ: <b>EDI1</b><br>• 媒体: <b>6（EDI）</b><br>• 相手先機能: SP（受注先）<br><br><b>トリガーチェーン:</b><br>VF01保存 → NACE EDI1起動 → IDOC ステータス01 → ポート経由送信 → ステータス12<br><br><b>ポイント:</b> NACE設定なしでは手動でIDOCを作成する必要があります。",
+
+        "modal-idoc-ref-title": "IDOCリファレンス: Tコード・テーブル・ステータスコード",
+        "modal-idoc-ref-data": "<b>設定Tコード</b><br>• <b>WE20</b> — パートナープロファイル<br>• <b>WE21</b> — ポート設定<br>• <b>WE30/31</b> — IDOCタイプ/セグメント<br>• <b>WE57</b> — MSG/IDOCタイプ割当<br>• <b>WE41/42</b> — 送受信プロセスコード<br>• <b>NACE</b> — 出力タイプ設定<br>• <b>BD64</b> — ALEディストリビューションモデル<br><br><b>監視Tコード</b><br>• <b>WE02/WE05</b> — IDOC表示/一覧<br>• <b>WE09</b> — コンテンツ検索<br>• <b>WE19</b> — テスト/再処理<br>• <b>BD87</b> — 受信失敗IDOCの再処理<br>• <b>WE15</b> — 送信失敗IDOCの再処理<br><br><b>主要データベーステーブル</b><br>• <b>EDIDC</b> — IDOCコントロールレコード（ヘッダ）<br>• <b>EDID4</b> — IDOCデータレコード（内容）<br>• <b>EDIDS</b> — IDOCステータスレコード<br>• <b>EDIPP/EDIPIA/EDIPOA</b> — パートナープロファイル<br>• <b>TPROT</b> — ポート定義<br><br><b>重要ステータスコード</b><br>• <b>01</b> — IDOC生成済<br>• <b>12</b> — 送信OK ✅<br>• <b>16</b> — 機能確認応答受信 ✅<br>• <b style='color:#f87171'>51</b> — アプリケーションエラー ⚠️<br>• <b style='color:#f87171'>56</b> — エラーあり ⚠️<br>• <b>53</b> — 正常転記 ✅",
 
         "section-certs": "資格・認定",
         "cert-n2": "日本語能力試験 N2 (2025年8月)",
