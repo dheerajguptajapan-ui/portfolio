@@ -20,7 +20,16 @@ function setLanguage(lang) {
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
-            element.innerHTML = translations[lang][key]; // changed to innerHTML to support list HTML
+            element.innerHTML = translations[lang][key]; 
+        }
+    });
+
+    // Update dynamic links (like lead capture forms)
+    const links = document.querySelectorAll('[data-i18n-link]');
+    links.forEach(link => {
+        const key = link.getAttribute('data-i18n-link');
+        if (translations[lang] && translations[lang][key]) {
+            link.href = translations[lang][key];
         }
     });
 }

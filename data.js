@@ -183,7 +183,8 @@ const translations = {
         "contact-location": "Tokyo, Japan",
         "contact-linkedin": "LinkedIn Profile",
         "contact-calendar-desc": "Want to discuss an opportunity? Book a 30-minute chat with me!",
-        "btn-calendar": "🗓️ Book an Appointment"
+        "btn-calendar": "🗓️ Book an Appointment",
+        "resume-form-link": "https://forms.gle/YOUR_GOOGLE_FORM_LINK_HERE"
     },
     ja: {
         "mascot-hero": "私の東京テーマパークへようこそ！ごゆっくりお楽しみください！",
@@ -369,6 +370,7 @@ const translations = {
         "contact-location": "日本、東京",
         "contact-linkedin": "LinkedIn プロフィール",
         "contact-calendar-desc": "プロジェクトのご相談はありませんか？30分のカジュアル面談を予約する：",
-        "btn-calendar": "🗓️ 面談を予約する"
+        "btn-calendar": "🗓️ 面談を予約する",
+        "resume-form-link": "https://forms.gle/YOUR_GOOGLE_FORM_LINK_HERE"
     }
 };
