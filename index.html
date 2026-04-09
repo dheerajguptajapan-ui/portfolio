@@ -275,62 +275,62 @@
                     <p class="cs-desc" data-i18n="cs2-desc">End-to-end IDOC setup from port configuration to fully automated document exchange with external systems.</p>
 
                     <!-- Config Setup Row -->
-                    <p class="flow-label">⚙️ Configuration Setup — Click each step to explore</p>
+                    <p class="flow-label" data-i18n="cs2-label-config">⚙️ Configuration Setup — Click each step to explore</p>
                     <div class="flow-chart">
-                        <div class="flow-node interactive-node" onclick="openOtcModal('we21')" title="Port Definition">Port Definition<br><span style='font-size:0.8em;opacity:0.8'>WE21</span></div>
+                        <div class="flow-node interactive-node" data-i18n="cs2-n1" onclick="openOtcModal('we21')" title="Port Definition">Port Definition<br><span style='font-size:0.8em;opacity:0.8'>WE21</span></div>
                         <div class="flow-arrow">➔</div>
-                        <div class="flow-node interactive-node" onclick="openOtcModal('we20')" title="Partner Profile">Partner Profile<br><span style='font-size:0.8em;opacity:0.8'>WE20</span></div>
+                        <div class="flow-node interactive-node" data-i18n="cs2-n2" onclick="openOtcModal('we20')" title="Partner Profile">Partner Profile<br><span style='font-size:0.8em;opacity:0.8'>WE20</span></div>
                         <div class="flow-arrow">➔</div>
-                        <div class="flow-node interactive-node" onclick="openOtcModal('we57')" title="MSG Type Link">MSG Type Link<br><span style='font-size:0.8em;opacity:0.8'>WE57</span></div>
+                        <div class="flow-node interactive-node" data-i18n="cs2-n3" onclick="openOtcModal('we57')" title="MSG Type Link">MSG Type Link<br><span style='font-size:0.8em;opacity:0.8'>WE57</span></div>
                         <div class="flow-arrow">➔</div>
-                        <div class="flow-node interactive-node" onclick="openOtcModal('we42')" title="Process Code">Process Code<br><span style='font-size:0.8em;opacity:0.8'>WE41/42</span></div>
+                        <div class="flow-node interactive-node" data-i18n="cs2-n4" onclick="openOtcModal('we42')" title="Process Code">Process Code<br><span style='font-size:0.8em;opacity:0.8'>WE41/42</span></div>
                         <div class="flow-arrow">➔</div>
-                        <div class="flow-node interactive-node highlight-node" onclick="openOtcModal('nace')" title="Output Type">Output Type<br><span style='font-size:0.8em;opacity:0.8'>NACE</span></div>
+                        <div class="flow-node interactive-node highlight-node" data-i18n="cs2-n5" onclick="openOtcModal('nace')" title="Output Type">Output Type<br><span style='font-size:0.8em;opacity:0.8'>NACE</span></div>
                     </div>
 
                     <!-- Inbound / Outbound Dual Flows -->
                     <div class="idoc-flows-grid">
                         <!-- Inbound -->
                         <div class="idoc-flow-col">
-                            <p class="flow-label">📥 Inbound IDOC Flow</p>
+                            <p class="flow-label" data-i18n="cs2-label-inbound">📥 Inbound IDOC Flow</p>
                             <div class="flow-chart-v">
-                                <div class="flow-node-sm">External System</div>
+                                <div class="flow-node-sm" data-i18n="cs2-in-n1">External System</div>
                                 <div class="flow-arrow-v">↓</div>
-                                <div class="flow-node-sm">SAP Port<br><span style='opacity:0.7;font-size:0.8em'>WE21</span></div>
+                                <div class="flow-node-sm" data-i18n="cs2-in-n2">SAP Port<br><span style='opacity:0.7;font-size:0.8em'>WE21</span></div>
                                 <div class="flow-arrow-v">↓</div>
-                                <div class="flow-node-sm">IDOC Created<br><span style='opacity:0.7;font-size:0.8em'>Status: 50</span></div>
+                                <div class="flow-node-sm" data-i18n="cs2-in-n3">IDOC Created<br><span style='opacity:0.7;font-size:0.8em'>Status: 50</span></div>
                                 <div class="flow-arrow-v">↓</div>
-                                <div class="flow-node-sm">Partner Check<br><span style='opacity:0.7;font-size:0.8em'>WE20</span></div>
+                                <div class="flow-node-sm" data-i18n="cs2-in-n4">Partner Check<br><span style='opacity:0.7;font-size:0.8em'>WE20</span></div>
                                 <div class="flow-arrow-v">↓</div>
-                                <div class="flow-node-sm">Process Code<br><span style='opacity:0.7;font-size:0.8em'>WE42</span></div>
+                                <div class="flow-node-sm" data-i18n="cs2-in-n5">Process Code<br><span style='opacity:0.7;font-size:0.8em'>WE42</span></div>
                                 <div class="flow-arrow-v">↓</div>
-                                <div class="flow-node-sm">Function Module<br><span style='opacity:0.7;font-size:0.8em'>IDOC_INPUT_*</span></div>
+                                <div class="flow-node-sm" data-i18n="cs2-in-n6">Function Module<br><span style='opacity:0.7;font-size:0.8em'>IDOC_INPUT_*</span></div>
                                 <div class="flow-arrow-v">↓</div>
-                                <div class="flow-node-sm highlight-node">Sales Order ✓<br><span style='opacity:0.7;font-size:0.8em'>Status: 53</span></div>
+                                <div class="flow-node-sm highlight-node" data-i18n="cs2-in-n7">Sales Order ✓<br><span style='opacity:0.7;font-size:0.8em'>Status: 53</span></div>
                             </div>
                         </div>
                         <!-- Outbound -->
                         <div class="idoc-flow-col">
-                            <p class="flow-label">📤 Outbound IDOC Flow</p>
+                            <p class="flow-label" data-i18n="cs2-label-outbound">📤 Outbound IDOC Flow</p>
                             <div class="flow-chart-v">
-                                <div class="flow-node-sm">Billing Doc<br><span style='opacity:0.7;font-size:0.8em'>VF01</span></div>
+                                <div class="flow-node-sm" data-i18n="cs2-out-n1">Billing Doc<br><span style='opacity:0.7;font-size:0.8em'>VF01</span></div>
                                 <div class="flow-arrow-v">↓</div>
-                                <div class="flow-node-sm">NACE Output<br><span style='opacity:0.7;font-size:0.8em'>EDI1 Fires</span></div>
+                                <div class="flow-node-sm" data-i18n="cs2-out-n2">NACE Output<br><span style='opacity:0.7;font-size:0.8em'>EDI1 Fires</span></div>
                                 <div class="flow-arrow-v">↓</div>
-                                <div class="flow-node-sm">IDOC Generated<br><span style='opacity:0.7;font-size:0.8em'>Status: 01</span></div>
+                                <div class="flow-node-sm" data-i18n="cs2-out-n3">IDOC Generated<br><span style='opacity:0.7;font-size:0.8em'>Status: 01</span></div>
                                 <div class="flow-arrow-v">↓</div>
-                                <div class="flow-node-sm">Port Dispatch<br><span style='opacity:0.7;font-size:0.8em'>Status: 03→12</span></div>
+                                <div class="flow-node-sm" data-i18n="cs2-out-n4">Port Dispatch<br><span style='opacity:0.7;font-size:0.8em'>Status: 03→12</span></div>
                                 <div class="flow-arrow-v">↓</div>
-                                <div class="flow-node-sm">External System<br><span style='opacity:0.7;font-size:0.8em'>Receives</span></div>
+                                <div class="flow-node-sm" data-i18n="cs2-out-n5">External System<br><span style='opacity:0.7;font-size:0.8em'>Receives</span></div>
                                 <div class="flow-arrow-v">↓</div>
-                                <div class="flow-node-sm highlight-node">ACK Received ✓<br><span style='opacity:0.7;font-size:0.8em'>Status: 16</span></div>
+                                <div class="flow-node-sm highlight-node" data-i18n="cs2-out-n6">ACK Received ✓<br><span style='opacity:0.7;font-size:0.8em'>Status: 16</span></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Reference Button -->
                     <div style="text-align:center; margin-top:25px;">
-                        <button class="flow-ref-btn interactive-node" onclick="openOtcModal('idoc-ref')">📊 T-Codes, Tables &amp; Status Codes Reference</button>
+                        <button class="flow-ref-btn interactive-node" data-i18n="cs2-btn-ref" onclick="openOtcModal('idoc-ref')">📊 T-Codes, Tables &amp; Status Codes Reference</button>
                     </div>
 
                     <!-- Experience Quote -->
