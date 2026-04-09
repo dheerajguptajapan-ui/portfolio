@@ -725,19 +725,32 @@ body.night-theme .petal {
     width: 100%;
     margin-top: 15px;
     background: rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    padding: 20px 15px;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 5px;
+}
+
+/* Hide scrollbar for a cleaner look while keeping functionality */
+.flow-chart::-webkit-scrollbar {
+    height: 6px;
+}
+.flow-chart::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 3px;
 }
 
 .flow-node {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
-    padding: 15px 20px;
+    padding: 12px 8px;
     border-radius: 8px;
     text-align: center;
     font-weight: bold;
-    flex: 1;
+    flex: 1 0 auto;
+    min-width: 110px;
     position: relative;
     transition: all 0.3s ease;
     min-height: 70px;
