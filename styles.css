@@ -865,6 +865,20 @@ body.night-theme .highlight-node {
     box-shadow: 0 0 20px var(--accent-glow);
 }
 
+/* Experience Quote */
+.experience-quote {
+    margin: 25px 0 0 0;
+    padding: 16px 20px;
+    border-left: 4px solid var(--accent-color);
+    background: rgba(0,0,0,0.2);
+    border-radius: 0 10px 10px 0;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    opacity: 0.85;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
 @keyframes pulse {
     0% { opacity: 0.3; transform: scale(0.9); }
     50% { opacity: 1; transform: scale(1.1); text-shadow: 0 0 5px var(--accent-glow); }
