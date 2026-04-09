@@ -239,3 +239,38 @@ function createPetal() {
 
 // Create a new petal every 150ms
 setInterval(createPetal, 150);
+
+// OTC Modal Logic
+function openOtcModal(nodeId) {
+    const modal = document.getElementById('otc-modal');
+    const titleEl = document.getElementById('modal-title');
+    const bodyEl = document.getElementById('modal-body');
+    
+    if (!modal || !titleEl || !bodyEl || !translations[currentLang]) return;
+    
+    // Fetch data based on nodeId (e.g. 'inq', 'qt', 'so')
+    const titleKey = `modal-${nodeId}-title`;
+    const dataKey = `modal-${nodeId}-data`;
+    
+    titleEl.innerHTML = translations[currentLang][titleKey] || "Data Unavailable";
+    bodyEl.innerHTML = translations[currentLang][dataKey] || "Please check configuration.";
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeOtcModal() {
+    const modal = document.getElementById('otc-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; 
+    }
+}
+
+// Close overlay if clicked outside
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('otc-modal');
+    if(modal) {
+        modal.addEventListener('click', closeOtcModal);
+    }
+});

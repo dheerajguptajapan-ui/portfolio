@@ -777,6 +777,84 @@ body.night-theme .highlight-node {
 }
 
 /* ==================== */
+/* Case Study Modal     */
+/* ==================== */
+.interactive-node {
+    cursor: pointer !important;
+}
+
+.otc-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+}
+
+.otc-modal-content {
+    max-width: 600px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    border-top: 4px solid var(--accent-color);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px var(--accent-glow);
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-modal-btn:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 15px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--heading-color);
+}
+
+.modal-icon {
+    font-size: 2rem;
+}
+
+.modal-body {
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.modal-body b {
+    color: var(--accent-color);
+}
+
+/* ==================== */
 /* Responsive - Tablet  */
 /* ==================== */
 @media (max-width: 768px) {
