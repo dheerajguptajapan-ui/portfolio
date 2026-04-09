@@ -255,6 +255,8 @@ const translations = {
         "modal-idoc-ref-title": "IDOCリファレンス: Tコード・テーブル・ステータスコード",
         "modal-idoc-ref-data": "<b>設定Tコード</b><br>• <b>WE20</b> — パートナープロファイル<br>• <b>WE21</b> — ポート設定<br>• <b>WE30/31</b> — IDOCタイプ/セグメント<br>• <b>WE57</b> — MSG/IDOCタイプ割当<br>• <b>WE41/42</b> — 送受信プロセスコード<br>• <b>NACE</b> — 出力タイプ設定<br>• <b>BD64</b> — ALEディストリビューションモデル<br><br><b>監視Tコード</b><br>• <b>WE02/WE05</b> — IDOC表示/一覧<br>• <b>WE09</b> — コンテンツ検索<br>• <b>WE19</b> — テスト/再処理<br>• <b>BD87</b> — 受信失敗IDOCの再処理<br>• <b>WE15</b> — 送信失敗IDOCの再処理<br><br><b>主要データベーステーブル</b><br>• <b>EDIDC</b> — IDOCコントロールレコード（ヘッダ）<br>• <b>EDID4</b> — IDOCデータレコード（内容）<br>• <b>EDIDS</b> — IDOCステータスレコード<br>• <b>EDIPP/EDIPIA/EDIPOA</b> — パートナープロファイル<br>• <b>TPROT</b> — ポート定義<br><br><b>重要ステータスコード</b><br>• <b>01</b> — IDOC生成済<br>• <b>12</b> — 送信OK ✅<br>• <b>16</b> — 機能確認応答受信 ✅<br>• <b style='color:#f87171'>51</b> — アプリケーションエラー ⚠️<br>• <b style='color:#f87171'>56</b> — エラーあり ⚠️<br>• <b>53</b> — 正常転記 ✅",
 
+        "cs2-quote": "Tapestryでは、WE02とWE05を使用して毎日受信IDOCを監視していました。IDOCがステータス51で失敗した場合、セグメントレベルでエラーを分析し、WE20でパートナープロファイル設定を確認、WE42でプロセスコードを検証し、機能的に解決するかABAPチームに詳細な分析を共有して対応を依頼しました。修正適用後はBD87を使用して失敗したIDOCを再処理しました。",
+
         "section-certs": "資格・認定",
         "cert-n2": "日本語能力試験 N2 (2025年8月)",
         "cert-sd1": "SAP S/4HANA Sales Exploration (2025年3月)",
