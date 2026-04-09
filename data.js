@@ -184,7 +184,7 @@ const translations = {
         "contact-linkedin": "LinkedIn Profile",
         "contact-calendar-desc": "Want to discuss an opportunity? Book a 30-minute chat with me!",
         "btn-calendar": "🗓️ Book an Appointment",
-        "resume-form-link": "https://forms.gle/YOUR_GOOGLE_FORM_LINK_HERE"
+        "resume-form-link": "https://docs.google.com/forms/d/1SickUdoDbCzDcyUc8hbXppx9hm10t_C6aPfTFRPiqFs/viewform"
     },
     ja: {
         "mascot-hero": "私の東京テーマパークへようこそ！ごゆっくりお楽しみください！",
@@ -371,6 +371,6 @@ const translations = {
         "contact-linkedin": "LinkedIn プロフィール",
         "contact-calendar-desc": "プロジェクトのご相談はありませんか？30分のカジュアル面談を予約する：",
         "btn-calendar": "🗓️ 面談を予約する",
-        "resume-form-link": "https://forms.gle/YOUR_GOOGLE_FORM_LINK_HERE"
+        "resume-form-link": "https://docs.google.com/forms/d/1SickUdoDbCzDcyUc8hbXppx9hm10t_C6aPfTFRPiqFs/viewform"
     }
 };
