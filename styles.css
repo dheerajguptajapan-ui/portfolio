@@ -699,6 +699,8 @@ body.night-theme .petal {
     flex-direction: column;
     gap: 30px;
     width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .cs-card {
@@ -721,7 +723,7 @@ body.night-theme .petal {
 .flow-chart {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     margin-top: 15px;
     background: rgba(0, 0, 0, 0.2);
@@ -731,6 +733,7 @@ body.night-theme .petal {
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 5px;
+    box-sizing: border-box;
 }
 
 /* Hide scrollbar for a cleaner look while keeping functionality */
