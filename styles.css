@@ -804,10 +804,63 @@ body.night-theme .highlight-node {
     margin-top: 15px;
 }
 
-.idoc-flow-col {
+.idoc-flow-col.idoc-accordion {
+    cursor: pointer;
+    width: 100%;
+}
+
+.idoc-accordion .flow-chart-v {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-color: transparent;
+}
+
+.idoc-flow-col.idoc-accordion.expanded .flow-chart-v {
+    max-height: 1200px;
+    opacity: 1;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-color: rgba(255,255,255,0.05);
+}
+
+.idoc-flow-col.idoc-accordion .flow-label {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    background: rgba(255,255,255,0.03);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+    margin: 10px 0;
+    transition: background 0.3s;
+}
+
+.idoc-flow-col.idoc-accordion:hover .flow-label {
+    background: rgba(255,255,255,0.08);
+}
+
+.idoc-flow-col.idoc-accordion .flow-label::after {
+    content: '▼';
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+    opacity: 0.5;
+}
+
+.idoc-flow-col.idoc-accordion.expanded .flow-label::after {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+.flow-arrow-v {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin: 5px 0;
+    opacity: 0.4;
+    animation: pulse 2s infinite;
 }
 
 .flow-chart-v {
@@ -815,10 +868,8 @@ body.night-theme .highlight-node {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.15);
     border-radius: 10px;
-    padding: 15px 10px;
-    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .flow-node-sm {
@@ -829,20 +880,12 @@ body.night-theme .highlight-node {
     text-align: center;
     font-size: 0.85rem;
     font-weight: bold;
-    width: 100%;
+    width: 90% !important;
     transition: all 0.2s ease;
 }
 
 .flow-node-sm.highlight-node {
     border-color: var(--accent-color);
-}
-
-.flow-arrow-v {
-    font-size: 1.1rem;
-    color: var(--accent-color);
-    margin: 5px 0;
-    opacity: 0.6;
-    animation: pulse 2s infinite;
 }
 
 .flow-ref-btn {

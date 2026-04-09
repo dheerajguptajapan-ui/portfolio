@@ -293,7 +293,7 @@
                     <!-- Inbound / Outbound Dual Flows -->
                     <div class="idoc-flows-grid">
                         <!-- Inbound -->
-                        <div class="idoc-flow-col">
+                        <div class="idoc-flow-col idoc-accordion" onclick="toggleAccordion(this)">
                             <p class="flow-label" data-i18n="cs2-label-inbound">📥 Inbound IDOC Flow</p>
                             <div class="flow-chart-v">
                                 <div class="flow-node-sm" data-i18n="cs2-in-n1">External System</div>
@@ -312,7 +312,7 @@
                             </div>
                         </div>
                         <!-- Outbound -->
-                        <div class="idoc-flow-col">
+                        <div class="idoc-flow-col idoc-accordion" onclick="toggleAccordion(this)">
                             <p class="flow-label" data-i18n="cs2-label-outbound">📤 Outbound IDOC Flow</p>
                             <div class="flow-chart-v">
                                 <div class="flow-node-sm" data-i18n="cs2-out-n1">Billing Doc<br><span style='opacity:0.7;font-size:0.8em'>VF01</span></div>
